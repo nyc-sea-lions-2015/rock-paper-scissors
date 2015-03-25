@@ -1,0 +1,27 @@
+
+
+  <h3>Make A choice <%= @user.spiritanimalname %> </h3>
+<div class="row">
+  <div class="col-md-3">
+    <a href="/game/rock/<%= @game.id %>" class="thumbnail">
+      <img src="/rock.jpg" alt="..." data-id="1">
+    </a>
+  </div>
+  ...
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <a href="/game/paper/<%= @game.id %>" class="thumbnail">
+      <img src="/paper.jpg" alt="..."data-id="2">
+    </a>
+  </div>
+  ...
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <a href="/game/scissors/<%= @game.id %>" class="thumbnail">
+      <img src="/scissors.jpg" alt="..."data-id="3">
+    </a>
+  </div>
+  ...
+</div>

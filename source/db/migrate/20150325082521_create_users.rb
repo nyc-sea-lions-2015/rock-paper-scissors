@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_digest, null: false
       t.string :spiritanimal
       t.string :choice
+      t.string :spiritanimalname
 
       t.timestamps
     end

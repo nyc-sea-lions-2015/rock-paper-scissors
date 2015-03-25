@@ -20,6 +20,7 @@ post '/authentication/login' do
     redirect "/user/#{user.id}"
   else
     403
+    redirect '/'
   end
 end
 
