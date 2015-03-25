@@ -1,5 +1,4 @@
-# Challenge Name
-
+# Rock Paper Scissors
 
 ## Summary
 Introduce the challenge to the students. After reading the Summary section, students should have a solid understanding of how this specific challenge relates to the overall curriculum:
