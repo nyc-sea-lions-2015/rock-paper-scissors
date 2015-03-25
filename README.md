@@ -1,4 +1,4 @@
-# Rock Paper Scissors
+# Rock Paper Scissors Lizard Spock
 
 ## Summary
 Sometimes in life we have to make decesions with our friends. Like, who picks up the check, who gets the front seat, or even who gets to jump into the pool first. I don't know about you; but I normally solve these hard choices with a quick game of Rock, Paper, Scissors.
@@ -41,8 +41,16 @@ First, create a data model and save your schema design in the top level of the g
 - Each symbol is represented by an image.
 - After both players have selected, the game runs it's logic and a winner is choosen.
    - Rock Beats Scissors
+   - Rock Beats Lizard
    - Paper Beats Rock
+   - Paper Beats Spock
    - Scissors Beat Paper
+   - Scissors Beat Lizard
+   - Lizard Beats Paper
+   - Lizard Beats Spock
+   - Spock Beats Rock
+   - Spock Beats Scissors
+
 - After the game save the following information
    - the winning player
    - the loosing player
