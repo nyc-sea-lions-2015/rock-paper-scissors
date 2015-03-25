@@ -1,0 +1,18 @@
+<h1>Choose your destiny!!</h1>
+<% pokemon.each do |i| %>
+  <img src="/img/<%= i %>.png">
+<% end %>
+
+<p>Player 1</p>
+<form type>
+<input type="radio" name="pokemon1" value="charmander" checked>Charmander
+<input type="radio" name="pokemon1" value="squirtle">Squirtle
+<input type="radio" name="pokemon1" value="bulbasaur">Bulbasaur
+</form>
+
+<p>Player 2</p>
+<form>
+<input type="radio" name="pokemon2" value="charmander" checked>Charmander
+<input type="radio" name="pokemon2" value="squirtle">Squirtle
+<input type="radio" name="pokemon2" value="bulbasaur">Bulbasaur
+</form>

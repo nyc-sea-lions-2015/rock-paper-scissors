@@ -1,4 +1,4 @@
-charmander =  { name: "chamander",
+charmander =  { name: "charmander",
                 img: '/img/charmander.png'}
 
 squirtle =    { name: "squirtle",
@@ -9,7 +9,7 @@ bulbasaur =   { name: "bulbasaur",
 
 Pokemon.create(charmander)
 Pokemon.create(squirtle)
-Pokemon.create(charmander)
+Pokemon.create(bulbasaur)
 
 player1 = {name: "Ash Ketchum"}
 player2 = {name: "Gary Oak"}
