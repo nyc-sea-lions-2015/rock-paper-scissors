@@ -1,11 +1,59 @@
 Rock-Paper-Scissors Data Model:
 
-Nouns
+Nouns:
 users
 moves
 turns
 
-Verbs
+Verbs:
 shoot
 win/lose
+read
+save
+delete ??
+edit user info ??
+
+MODELS
+
+1)USER(inherits from AR base)
+- association: has many games
+- association: has many tokens
+- will have a name
+
+2)GAME(inherits from AR base)
+- association: has user 1
+- association: has user 2
+- association: has user 1 token
+- association: has user 2 token
+
+3)TOKEN(inherits from AR base)
+- belongs to game
+- belongs to user
+- has a filepath (to its image)
+- has a name (rock, paper or scissor)
+- *custom method to determine who it beats and who beats it
+
+4)GAMELOGIC(simple ruby class)
+-takes as its parameter a game object, which means it needs:
+-player 1 object and player 2 object
+-player 1 token object and player 2 token object
+-algorithm determines winner and loser based on tokens thrown
+-returns winner and loser to controller
+
+RELATIONSHIPS
+
+Game to User => Many-to-Many
+User to Token => One-to-Many
+
+DB TABLES
+
+1) Users
+fields - id, name
+
+2) Games
+fields - id, user_1_token_id, user_2_token_id
+
+3) Tokens
+fields - id, name, filepath
+
 
