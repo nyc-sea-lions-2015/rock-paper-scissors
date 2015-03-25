@@ -1,10 +1,7 @@
-require 'sinatra'
-
 class RockPaperScissors
-  attr_reader :players, :tokens
-  def initialize(player1, player2, player1_token, player1_token)
-    @player1 = player1
-    @player2 = player2
+  def initialize(first_player, second_player, player1_token, player1_token)
+    @player1 = first_player
+    @player2 = second_player
     @player1_token = player1_token
     @player2_token = player2_token
   end
@@ -48,18 +45,8 @@ class RockPaperScissors
       else
         raise "Invalid choice by #{@player1}"
       end
-
-
     end
-
   end
 
 end
-
-player1 = User.find_by_id(1)
-player2 = User.find_by_id(2)
-rock = Token.find_by(name: "Rock")
-paper = Token.find_by(name: "Paper")
-scissors = Token.find_by(name: "Scissors")
-game1 = RockPaperScissors.new(player1, player2, rock, scissors)
 
