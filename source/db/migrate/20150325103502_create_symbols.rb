@@ -1,4 +1,10 @@
 class CreateSymbols < ActiveRecord::Migration
   def change
+    create_table :symbols do |t|
+      t.string :name, null: false, limit: 30
+      t.belongs_to :user
+
+      t.timestamps null: false
+    end
   end
 end

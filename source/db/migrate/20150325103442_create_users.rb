@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name, null: false, limit: 30
       t.boolean :win
-      has_one :symbol
+      t.has_one :symbol
 
       t.timestamps null: false
     end
