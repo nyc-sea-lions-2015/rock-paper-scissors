@@ -26,7 +26,9 @@ The challenge will be broken up into a few parts.
 ### Pre-release: The Rundown
 In the source directory there is copy of the skeleton you've been building through the phase so far. This is a good learning oppertunity: 
 ```text
-We create skeletons like this because we are developers who like to optimize our lives. Now that we have a basic configuration we know is in good standing, we can continue to use it. Application prototyping time speeds up.
+We create skeletons like this because we are developers who like to optimize our lives. 
+Now that we have a basic configuration we know is in good standing, we can continue to use it.
+Application prototyping time speeds up.
 ```
 **Let me know if anything from the skeleton configuration seems to be incorrect**
 
