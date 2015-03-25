@@ -7,6 +7,10 @@
   </div>
   <div class="media-body">
     <h4 class="media-heading">Welcome the the Dojo <%=@user.email%></h4>
-<p>~~ Click your Spirit Animal To Start new Game ~~</p>
+<p>~~ Click your Spirit Animal To Start new Game Against The Computer ~~</p>
+<hr>
+<p> ~~ Click the Guest Button To Start new Game Against a Guest ~~ </p>
+<p><a class="btn btn-primary btn-lg" href="/game/new/<%=@user.id%>" role="button">Play <%=@user.spiritanimalname%></a></p>
+<p><a class="btn btn-primary btn-lg" href="/guest/<%=@user.id%>" role="button">Play Guest</a></p>
   </div>
 </div>

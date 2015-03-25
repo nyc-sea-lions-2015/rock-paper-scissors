@@ -3,6 +3,13 @@ get '/game/new/:id' do
   @game = Game.create()
   erb :'/game/view'
 end
+get '/game/win' do
+  erb :'/game/win'
+end
+
+get '/game/lose' do
+  erb :'/game/lose'
+end
 
 # post '/game/new/:id' do
 # Wanted to use this to create a new game
@@ -10,18 +17,11 @@ end
 #   redirect "/game/new/#{@game.id}"
 # end
 
-get '/game/rock/:id' do
+get '/game/:shoot/:id' do
   @game = Game.find(params[:id])
+  @result = @game.shoot(params[:shoot])
+  redirect "/game/#{@result}"
 end
-
-get '/game/paper/:id' do
-
-end
-
-get '/game/scissors/:id' do
-
-end
-
 
 
 
