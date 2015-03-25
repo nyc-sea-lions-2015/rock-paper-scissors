@@ -1,0 +1,11 @@
+
+<center>
+
+<h1> Players </h1>
+<%@players.each do |play| %>
+  <p><a href="/players/<%=play.id%>"><%=play.first_name%></a></p>
+<% end %>
+
+</center>
+
+
