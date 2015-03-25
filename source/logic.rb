@@ -11,11 +11,11 @@ class Logic
   def rules
     case @choice1
     when 'charmander'
-      return true unless @choice2 == 'squirtle'
+      @choice2 != 'squirtle'
     when 'squirtle'
-      return true unless @choice2 == 'bulbasaur'
+      @choice2 != 'bulbasaur'
     when 'bulbasaur'
-      return true unless @choice2 == 'charmander'
+      @choice2 != 'charmander'
     end
   end
 
@@ -23,3 +23,4 @@ class Logic
     Game.winner = (@choice1 == true ? player_1 : player_2)
   end
 end
+
