@@ -3,7 +3,6 @@ get '/' do
 end
 
 get '/game/new' do
-
   erb :forms
 end
 
