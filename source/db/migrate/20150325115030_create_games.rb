@@ -5,6 +5,8 @@ class CreateGames < ActiveRecord::Migration
       t.integer :loser_id, null: false
       t.integer :winning_token_id, null: false
       t.integer :losing_token_id, null:false
+
+      t.timestamps, null:false
     end
   end
 end
