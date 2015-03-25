@@ -35,3 +35,5 @@ Game Controller
     Paper Beats Rock
     Scissors Beat Paper
 
+Need ability for players to join the game.
+Show the Three Symbols on the Website.
