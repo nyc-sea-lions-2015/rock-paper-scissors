@@ -1,0 +1,11 @@
+Rock-Paper-Scissors Data Model:
+
+Nouns
+users
+moves
+turns
+
+Verbs
+shoot
+win/lose
+
