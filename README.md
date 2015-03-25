@@ -11,7 +11,6 @@ The challenge will be broken up into a few parts.
 - **Release 1** Create views to manage resources, and play a basic game.
 - **Release 2** Enhance the UX (User Experience) using Javascript and JQuery. 
 - **Release 3** Persist stats about the game via JQuery's implementation of AJAX.
-- **Release 4** Add Authentication for multiple users w/ migrations.
 
 ### New Technology/Concept
 
@@ -71,7 +70,8 @@ Now we are going to add some javascript to enhance the usability of the game. En
 
 
 ### Release 3: Save game statistics
-TBD
-### Release 4: Adding Authentication
-TBD
-## Conclusion
+Continuing with the Javascript enhancements, we are going to use Ajax to process the game.
+
+- Update the application and change how we post the game data to the server. When the game finishes counting down, an Ajax Post will send both users choices to the server. 
+- After the server returns the game logic, the DOM should update to display the winner.
+- Use an Ajax Get, to return the new stats and render them on the page.
