@@ -3,7 +3,8 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
       t.references :winner
       t.references :loser
-      t.string :choice
+      t.string :choice1
+      t.string :choice2
 
       t.timestamps
     end

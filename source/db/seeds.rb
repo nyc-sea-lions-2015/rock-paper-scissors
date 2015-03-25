@@ -1,8 +1,8 @@
-user1 = {:name => "Player 1",
+user1 = {:player_number => 1,
         :first_name => "Sam",
          :age => 24 }
 
-user2 = {:name => "Player 2",
+user2 = {:player_number => 2,
         :first_name => "Zack",
          :age => 28 }
 
