@@ -1,6 +1,6 @@
 get '/' do
 
- redirect 'users/index'
+  erb :index
 end
 
 
