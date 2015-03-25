@@ -1,10 +1,10 @@
 class CreateGames < ActiveRecord::Migration
   def change
     create_table :games do |t|
-      t.string :winner, null: false
-      t.string :loser, null: false
-      t.string :winning_token, null: false
-      t.string :losing_token, null:false
+      t.integer :winner_id, null: false
+      t.integer :loser_id, null: false
+      t.integer :winning_token_id, null: false
+      t.integer :losing_token_id, null:false
     end
   end
 end
