@@ -1,0 +1,23 @@
+<h1>Rock, Paper, Scissors SHOOT!</h1>
+  <img src="/imgs/paper.jpg" alt="paper" height="100" width="100">
+  <img src="/imgs/rock.jpg" alt="paper" height="100" width="100">
+  <img src="/imgs/scissor.jpg" alt="paper" height="100" width="100">
+
+  <form action="/newgame" method="post">
+    <p>Player one select choice:</p>
+    <select name="choice1">
+      <%Token.all.each do |v|%>
+        <option value="<%=v.id%>"><%=v.name%></option>
+      <%end%>
+    </select>
+
+    <br><br>
+    <p>Player two select choice:</p>
+    <select name="choice2">
+      <%Token.all.each do |v|%>
+        <option value="<%=v.id%>"><%=v.name%></option>
+      <%end%>
+    </select>
+    <br><br>
+    <input type='submit' value='Play' />
+  </form>

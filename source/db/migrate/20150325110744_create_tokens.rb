@@ -1,6 +1,6 @@
-class CreateRecord < ActiveRecord::Migration
+class CreateTokens < ActiveRecord::Migration
   def change
-    create_table :tokens do |do|
+    create_table :tokens do |t|
       t.string :name, null: false
       t.string :image
     end

@@ -10,3 +10,6 @@ paper_details = {name: 'paper',
 Token.create(rock_details)
 Token.create(scissor_details)
 Token.create(paper_details)
+
+User.create({name: "Player One"})
+User.create({name: "Player Two"})
