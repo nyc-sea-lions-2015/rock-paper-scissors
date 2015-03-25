@@ -25,7 +25,8 @@ The challenge will be broken up into a few parts.
 ### Pre-release: The Rundown
 In the source directory there is copy of the skeleton you've been building through the phase so far. This is a good learning opportunity: 
 ```text
-Developers create skeletons like this because it optimizes basic configuration and setup, allowing us to focus on more complex ideas.
+Developers create skeletons like this because it optimizes basic configuration and setup, 
+allowing us to focus on more complex ideas.
 ```
 **Let me know if anything from the skeleton configuration seems to be incorrect**
 
