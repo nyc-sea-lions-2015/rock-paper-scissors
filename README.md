@@ -60,6 +60,8 @@ First, create a data model and save your schema design in the top level of the g
   - "Player Two"
 - Create all of the models and wire up the associations
 
+![ERD](/paper_rock_scissor_lizard_spock_erd.png)
+
 ### Release 1: Building the game
 Next we want to build our our basic game logic. Create a basic crud application that handles the games workflow.
 Build out the views, add images for the symbols.
