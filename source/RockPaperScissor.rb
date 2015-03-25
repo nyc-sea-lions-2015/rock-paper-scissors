@@ -7,10 +7,25 @@ class RockPaperScissors
     @player2 = player2
   end
 
+  def play(match)
+    match.times do
+
+    end
+  end
 
 end
 
 class Player
+  @@players = [ ]
 
+  def self.inherited(player)
+    @@players << player
+  end
+
+  def self.each_pair
+    (0..(@@player))
+  end
 
 end
+
+
