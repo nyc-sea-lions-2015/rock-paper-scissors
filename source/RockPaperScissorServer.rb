@@ -9,3 +9,8 @@ class RockPaperScissors
 
 
 end
+
+class Player
+
+
+end

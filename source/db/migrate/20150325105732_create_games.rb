@@ -5,6 +5,7 @@ class CreateGames < ActiveRecord::Migration
       t.string :losing_player
       t.string :winning_symbol
       t.string :losing_symbol
+      t.references :user
 
       t.timestamps null: false
     end
