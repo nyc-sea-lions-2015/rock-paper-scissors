@@ -24,9 +24,9 @@ The challenge will be broken up into a few parts.
 
 ## Releases 
 ### Pre-release: The Rundown
-In the source directory there is copy of the skeleton you've been building through the phase so far. This is a good learning oppertunity: 
+In the source directory there is copy of the skeleton you've been building through the phase so far. This is a good learning opportunity: 
 ```text
-Developers create skeletons like this because it optimizes basic configuration and setup. Allowing us to focus on more complex ideas.
+Developers create skeletons like this because it optimizes basic configuration and setup, allowing us to focus on more complex ideas.
 ```
 **Let me know if anything from the skeleton configuration seems to be incorrect**
 
@@ -34,10 +34,10 @@ Complete each release fully before moving on. Each part will build on itself. Re
 
 
 ### Release 0: Building the backend
-First, create a data model and save your schema design in the top level of the git repository. Here are some basic requirments.
+First, create a data model and save your schema design in the top level of the git repository. Here are some basic requirements.
 
 - A game is played between two players.
-- Each player is promopted to choose a symbol: Rock, Paper, or Scissors.
+- Each player is prompted to choose a symbol: Rock, Paper, or Scissors.
 - Each symbol is represented by an image.
 - After both players have selected, the game runs it's logic and a winner is choosen.
    - Rock Beats Scissors
