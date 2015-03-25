@@ -1,4 +1,4 @@
-class Game < ActiveRecord::Base
+class Game < ActiveRecord::Migration
   create_table :games do |t|
     t.references :player_1, class_name: 'Player'
     t.references :player_2, class_name: 'Player'

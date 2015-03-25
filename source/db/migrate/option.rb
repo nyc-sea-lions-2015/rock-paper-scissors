@@ -1,4 +1,4 @@
-class Option < ActiveRecord::Base
+class Option < ActiveRecord::Migration
   belongs_to :game
   create_table :options do |t|
     t.string :name

@@ -1,4 +1,4 @@
-class Player < ActiveRecord::Base
+class Player < ActiveRecord::Migration
   has_many :games
   create_table :players do |t|
     t.string :name
