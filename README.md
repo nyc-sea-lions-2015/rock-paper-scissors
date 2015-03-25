@@ -39,13 +39,13 @@ First, create a data model and save your schema design in the top level of the g
 - A game is played between two players.
 - Each player is prompted to choose a symbol: Rock, Paper, or Scissors.
 - Each symbol is represented by an image.
-- After both players have selected, the game runs it's logic and a winner is choosen.
+- After both players have selected, the game runs its logic and a winner is choosen.
    - Rock Beats Scissors
    - Paper Beats Rock
    - Scissors Beat Paper
 - After the game save the following information
    - the winning player
-   - the loosing player
+   - the losing player
    - What symbol each player used for the game.
 - Create a table named users, and seed it with two records. 
   - "Player One"
@@ -63,7 +63,7 @@ Build out the views, add images for the symbols.
 - The user is directed to the stats page and prompted to play another game. 
 
 ### Release 2: User Experience Enhancements
-Now we are going to add some javascript to enhance the usability of the game. Encompass logic in objects were appropriate. Write tests them to make sure they are working correctly. 
+Now we are going to add some JavaScript to enhance the usability of the game. Encompass logic in objects were appropriate. Write tests them to make sure they are working correctly. 
 
 - Change the way each player chooses their symbol. Instead of having to redirect for every page, use javascript to hide and show each their choices. 
 - Once each player selects their choice the game counts down... Rock... Paper... Scissors... Shoot! 
@@ -71,8 +71,8 @@ Now we are going to add some javascript to enhance the usability of the game. En
 
 
 ### Release 3: Save game statistics
-Continuing with the Javascript enhancements, we are going to use Ajax to process the game.
+Continuing with the JavaScript enhancements, we are going to use Ajax to process the game.
 
-- Update the application and change how we post the game data to the server. When the game finishes counting down, an Ajax Post will send both users choices to the server. 
+- Update the application and change how we post the game data to the server. When the game finishes counting down, an Ajax `POST` will send both users choices to the server. 
 - After the server returns the game logic, the DOM should update to display the winner.
-- Use an Ajax Get, to return the new stats and render them on the page.
+- Use an Ajax `GET`, to return the new stats and render them on the page.
