@@ -1,3 +1,5 @@
+require_relative 'config/application'
+
 class Logic
   def initialiize(choice1, choice2)
     choice1, choice2 = @choice1, @choice2
@@ -22,5 +24,7 @@ class Logic
   def choose_winner
     Game.winner = (@choice1 == true ? player_1 : player_2)
   end
+
+
 end
 

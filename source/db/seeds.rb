@@ -7,6 +7,12 @@ squirtle =    { name: "squirtle",
 bulbasaur =   { name: "bulbasaur",
                 img: "/img/bulbasaur.png"}
 
-Option.create(charmander)
-Option.create(squirtle)
-Option.create(charmander)
+Pokemon.create(charmander)
+Pokemon.create(squirtle)
+Pokemon.create(charmander)
+
+player1 = {name: "Ash Ketchum"}
+player2 = {name: "Gary Oak"}
+
+Player.create(player1)
+Player.create(player2)
