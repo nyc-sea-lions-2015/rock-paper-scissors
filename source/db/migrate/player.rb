@@ -1,5 +1,6 @@
 class Player < ActiveRecord::Base
-  create_table do |t|
+  has_many :games
+  create_table :players do |t|
     t.string :name
 
     t.timestamps null: false

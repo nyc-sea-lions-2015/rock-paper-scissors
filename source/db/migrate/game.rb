@@ -1,7 +1,7 @@
 class Game < ActiveRecord::Base
-  create_table do |t|
-    t.string :player_1
-    t.string :player_2
+  create_table :games do |t|
+    t.references :player_1, class_name: 'Player'
+    t.references :player_2, class_name: 'Player'
     t.string :winner
     t.string :loser
     t.string :choice_1
