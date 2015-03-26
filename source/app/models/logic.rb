@@ -1,11 +1,18 @@
 class Logic
+  attr_reader :status
   def initialize(game, choice1, choice2)
     @game = game
+    @status = true
     @choice1, @choice2 = choice1, choice2
-    rules
-    choose_winner
+    if checker
+      rules
+      choose_winner
+    end
   end
 
+  def checker
+    @status = false if @choice1 == @choice2
+  end
   #set the standard of what beats what
   def rules
     case @choice1
@@ -15,8 +22,6 @@ class Logic
       @choice2 != 'bulbasaur'
     when 'bulbasaur'
       @choice2 != 'charmander'
-    else
-      return
     end
   end
 
@@ -29,7 +34,6 @@ class Logic
       @game.winner_id = 2
       @game.loser_id = 1
     end
-    @game.save!
   end
 
 end
