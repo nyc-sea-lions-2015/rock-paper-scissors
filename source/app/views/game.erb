@@ -9,10 +9,18 @@
 
 <form action="/game" method="post">
   <input type="text" placeholder="player one choice" name="player_1_token_name"/>
+  <br>
+  <br>
+  <input type="text" placeholder="player two choice" name="player_2_token_name"/>
+  <br>
+  <br>
   <input type="submit" value="SHOOT!">
 </form>
 
-<form action="/game" method="post">
-  <input type="text" placeholder="player two choice" name="player_2_token_1_name"/>
-  <input type="submit" value="SHOOT!">
-</form>
+<% if winner %>
+  <% if winner == "Draw."%>
+    <p><%= winner %></p>
+  <% else %>
+  <p><%= winner %> is the winner!</p>
+  <% end %>
+<% end %>
