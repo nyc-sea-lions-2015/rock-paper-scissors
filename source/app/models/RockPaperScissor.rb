@@ -8,7 +8,6 @@ class RockPaperScissors
   end
 
   def play
-    #Return id of winner and the token they used
     token1, token2 = @token1, @token2
     player1, player2 = @player1, @player2
     if token1 == token2
@@ -25,9 +24,9 @@ class RockPaperScissors
     when "The Rock"
       case token2
       when "Parchment"
-        results(player1, player2, token1, token2)
+        results(player2, player1, token1, token2)
       when "Fiskars"
-        results(player1, token1, token2)
+        results(player1, player2, token1, token2)
       end
     when "Fiskars"
       case token2
