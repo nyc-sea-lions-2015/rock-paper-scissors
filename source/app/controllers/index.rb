@@ -1,3 +1,4 @@
 get '/' do
-  erb :index
+  game = Game.create!
+  redirect "/games/#{game.id}"
 end
