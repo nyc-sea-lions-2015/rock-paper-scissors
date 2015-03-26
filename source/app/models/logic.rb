@@ -1,10 +1,12 @@
 class Logic
   attr_reader :status
-  def initialize(game, choice1, choice2)
+  def initialize(game, choice1, choice2, player1, player2)
     @game = game
     @status = true
     @choice1, @choice2 = choice1, choice2
-    if checker
+    @player1, @player2 = player1, player2
+    checker
+    if @status
       rules
       choose_winner
     end
@@ -28,11 +30,11 @@ class Logic
   def choose_winner
     # @game.winner_id = (@choice1 ? 1 : 2)
     if @choice1
-      @game.winner_id = 1
-      @game.loser_id = 2
+      @game.winner = @player1
+      @game.loser = @player2
     else
-      @game.winner_id = 2
-      @game.loser_id = 1
+      @game.winner = @player2
+      @game.loser = @player1
     end
   end
 
