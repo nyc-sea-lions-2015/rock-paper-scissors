@@ -9,6 +9,7 @@
     <% unless game.user_1_choice %>
       <% tokens.each do |token| %>
         <form action="/games/<%= game.id %>/user_1_choice_ID" method="post">
+          <img src="<%=token.image%>">
           <input type="hidden" name="_method" value="put">
           <input type="hidden" name="user_1_choice_ID" value="<%= token.id %>">
           <input type="submit" value="<%= token.name %>">
@@ -23,10 +24,11 @@
     </form>
     <% unless game.user_2_choice %>
       <% tokens.each do |token| %>
-        <form action="/games/<%= game.id %>/user_2_choice_ID" method="post">
+        <form  action="/games/<%= game.id %>/user_2_choice_ID" method="post">
+          <img src="<%=token.image%>">
           <input type="hidden" name="_method" value="put">
           <input type="hidden" name="user_2_choice_ID" value="<%= token.id %>">
-          <input type="submit" value="<%= token.name %>">
+          <input  type="submit" value="<%= token.name %>">
         </form>
       <% end %>
     <% end %>
