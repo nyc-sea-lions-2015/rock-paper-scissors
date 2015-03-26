@@ -1,0 +1,39 @@
+Rock Paper Scissors:
+
+Sinatra, CRUD
+
+Play game.
+
+Use jQuery
+
+Persist stats about game with AJAX
+
+Tables Needed: users, players, game
+
+Models Needed:
+Player
+  State:
+    Name
+  Abilities:
+    Can win or lose
+    Can choose rock, paper, scissors
+
+Game
+  State
+    Status: Won/Lost
+    Player 1, Player 2
+  Abilities
+    Ask players for playls
+
+Controllers Needed:
+Game Controller
+  Get Two Players
+  Ask Player 1 for A Symbol (Click one of the three symbols)
+  Symbols: Rock, Paper, Scissors
+  Rules:
+    Rock Beats Scissors
+    Paper Beats Rock
+    Scissors Beat Paper
+
+Need ability for players to join the game.
+Show the Three Symbols on the Website.
