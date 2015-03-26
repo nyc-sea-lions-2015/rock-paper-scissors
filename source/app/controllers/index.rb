@@ -25,8 +25,9 @@ post '/game' do
     win_token = curr_game.user_throw2
     lose_token = curr_game.user_throw1
   end
-  "#{winner}, #{win_token}"
-  # game = Game.new(winner: winner, loser: loser, win_token_id: win_token, lose_token_id: lose_token)
+  # At this point, I have winner through user ID.
+  "Winner: #{winner} with #{win_token} |  Loser: #{loser} with #{lose_token}"
+  game = Game.create(winner_id: winner, loser_id: loser, win_token_id: win_token, lose_token_id: lose_token)
   # redirect '/game/#{game.id}'
 end
 
