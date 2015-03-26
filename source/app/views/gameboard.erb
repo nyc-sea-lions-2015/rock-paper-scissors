@@ -1,54 +1,25 @@
 <form action='/game' method='post'>
-  <input type="hidden" name="user1" value="<%= @user1.id %>">
-  <input type="hidden" name="user2" value="<%= @user2.id %>">
-
-<!-- TODO: loop through and have loop thru images and with ID as value -->
   <% @users.each do |user| %>
   <input type="hidden" name="user<%= user.id%>" value="<%= user.id %>">
-  <h1>Player <%= user.id %>: Pick a move!</h1>
+  <% end %>
+
+<!-- Tried to loop users and then inside loop tokens but "name=" wouldn't work because I need to have three that are token 1 and three that are token 2 -->
+  <h1>Player 1: Pick a move!</h1>
     <% @tokens.each do |token| %>
       <p><%= token.name %>
         <img src="/imgs/<%= token.name%>.png">
-        <input type="radio" name="token<%= token.id%>" value="<%= token.id %>"/>
+        <input type="radio" name="token1" value="<%= token.id %>"/>
       </p>
       <br>
     <% end %>
-  <% end %>
+
+  <h1>Player 2: Pick a move!</h1>
+    <% @tokens.each do |token| %>
+      <p><%= token.name %>
+        <img src="/imgs/<%= token.name%>.png">
+        <input type="radio" name="token2" value="<%= token.id %>"/>
+      </p>
+      <br>
+    <% end %>
   <input type="submit" value="BATTLE"/>
 </form>
-
-
-<!--   <h1>Player 1: Pick a move!</h1>
-  <p>ROCK WIZARDDD!
-    <img src="/imgs/rock.png">
-    <input type="radio" name="token1" value="1">
-  </p>
-  <br>
-  <p>BARBER SCISSORS!
-    <img src="/imgs/scissors.png">
-    <input type="radio" name="token1" value="2">
-  </p>
-  <br>
-  <p>2PLY TOILET PAPER!
-    <img src="/imgs/paper.png">
-    <input type="radio" name="token1" value="3">
-  </p>
-<h1>Player 2: Pick a move!</h1>
-
-  <p>ROCK WIZARDDD!
-    <img src="/imgs/rock.png">
-    <input type="radio" name="token2" value="1">
-  </p>
-  <br>
-  <p>BARBER SCISSORS!
-    <img src="/imgs/scissors.png">
-    <input type="radio" name="token2" value="2">
-  </p>
-  <br>
-  <p>2PLY TOILET PAPER!
-    <img src="/imgs/paper.png">
-    <input type="radio" name="token2" value="3">
-  </p>
-  <input type="submit" value="BATTLE"/>
-</form>
- -->

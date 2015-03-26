@@ -13,24 +13,25 @@ get '/game' do
 end
 
 post '/game' do
-  # curr_game = Logic.new(params[:user1],params[:user2],params[:token1],params[:token2])
-  # winner = curr_game.run
-  # if winner == params[:user1]
-  #   loser = params[:user2]
-  #   # win_token = params[:token1]
-  #   # lose_token = params[:token2]
-  # else
-  #   winner = params[:user2]
-  #   loser = params[:user1]
-  #   # win_token = params[:token2]
-  #   # lose_token = params[:token1]
-  # end
+  curr_game = Logic.new(params[:user1],params[:user2],params[:token1],params[:token2])
+  winner = curr_game.run
+  if winner == curr_game.user1
+    loser = curr_game.user2
+    win_token = curr_game.user_throw1
+    lose_token = curr_game.user_throw2
+  else
+    winner = curr_game.user2
+    loser = curr_game.user1
+    win_token = curr_game.user_throw2
+    lose_token = curr_game.user_throw1
+  end
+  "#{winner}, #{win_token}"
   # game = Game.new(winner: winner, loser: loser, win_token_id: win_token, lose_token_id: lose_token)
   # redirect '/game/#{game.id}'
 end
 
 get '/game/:id' do
-  curr_game = Game.find_by(id: params[:id])
+  currgame = Game.find_by(id: params[:id])
   @winner = currgame.winner
   @loser = currgame.loser
   @win_token = currgame.win_token
