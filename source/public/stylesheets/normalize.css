@@ -7,3 +7,13 @@
 .centered {
   text-align: center
 }
+
+.form {
+  width: 25%;
+  display: inline-block;
+}
+
+.spacer {
+  width: 40%;
+  display: inline-block;
+}

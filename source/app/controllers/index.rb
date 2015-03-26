@@ -7,3 +7,7 @@ end
 get '/gameboard' do
   erb :'gameboard'
 end
+
+get '/outcome' do
+  erb :'outcome'
+end
