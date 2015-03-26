@@ -6,7 +6,7 @@ end
 puts '/games/:id/player_1_name' do
   game = Game.find_by(:id => params[:id])
   game.player_1 = User.find_or_create_by(:name => params[:player_1_name])
-  game.save:
+  game.save!
   redirect back
 end
 
