@@ -3,3 +3,7 @@ get '/guest/:id' do
   @game = Game.find(params[:id])
   erb :'/game/guest'
 end
+
+get 'guest/game/:id' do
+  erb :'/game/doublewinner'
+end
