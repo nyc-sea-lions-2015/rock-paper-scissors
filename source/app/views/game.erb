@@ -1,4 +1,8 @@
 <h1>Make Your Choice!</h1>
 <% tokens.each do |token| %>
+ <figure>
   <img src="<%=token.url %>" height="82" width="82">
+  <figcaption><%= token.name %></figcaption>
+</figure>
 <% end %>
+
