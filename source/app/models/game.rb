@@ -12,4 +12,8 @@ class Game < ActiveRecord::Base
     return player_2 if player_2_choice.beats(player_1_choice)
   end
   
+  def complete?
+    user_1_choice and user_2_choice
+  end
+
 end

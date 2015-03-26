@@ -1,37 +1,45 @@
 <h1> Rock Paper Scissors </h1>
 
-<img src="http://cdn4.fashionablygeek.com/wp-content/uploads/2010/07/Rock_Paper_Scissor_Hold.jpg?f187b0">
+<img id="icon" src="http://cf067b.medialib.glogster.com/media/0e/0e836fec3a53395127ebc6822552feb86a063f5f1237e0a71b4a8c5a997201ab/rock-paper-scissors-crg7n4-d-1.jpg">
 
   <body>
-    <form action="/games/<%= game.id %>/user_1_name" method="post">
+    <form class = "player_form" action="/games/<%= game.id %>/user_1_name" method="post">
       <input type="hidden" name="_method" value="put">
         <input type="text" name="user_1_name" value="player 1">
-      <input type="submit">
+      <input class="submit_button" type="submit">
     </form>
     <% unless game.user_1_choice %>
       <% tokens.each do |token| %>
         <form action="/games/<%= game.id %>/user_1_choice_ID" method="post">
-          <img src="<%=token.image%>">
           <input type="hidden" name="_method" value="put">
           <input type="hidden" name="user_1_choice_ID" value="<%= token.id %>">
-          <input type="submit" value="<%= token.name %>">
+          <input class="token_button"  type="submit" value="<%= token.name %>"><img class="choice" height="93em" weight="93em" src="<%=token.image%>"></input>
         </form>
       <% end %>
     <% end %>
 
-    <form action="/games/<%= game.id %>/user_2_name" method="post">
+    <form class="player_form" action="/games/<%= game.id %>/user_2_name" method="post">
       <input type="hidden" name="_method" value="put">
       <input type="text" name="user_2_name" value="player 2">
-      <input type="submit">
+      <input class="submit_button" type="submit">
     </form>
     <% unless game.user_2_choice %>
       <% tokens.each do |token| %>
         <form  action="/games/<%= game.id %>/user_2_choice_ID" method="post">
-          <img src="<%=token.image%>">
+          
+          <input type="hidden" name="_method" value=
           <input type="hidden" name="_method" value="put">
           <input type="hidden" name="user_2_choice_ID" value="<%= token.id %>">
-          <input  type="submit" value="<%= token.name %>">
+          <input class="token_button" type="submit" value="<%= token.name %>"><img class="choice" height="93em" weight="93em" src="<%=token.image%>"></input>
         </form>
+      <% end %>
+    <% end %>
+
+     <% if game.complete? %>
+      <% if game.winner %>
+        <%= game.winner.name %> wins!
+      <% else %>
+        draw.
       <% end %>
     <% end %>
 
