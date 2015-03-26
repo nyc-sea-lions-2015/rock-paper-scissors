@@ -1,0 +1,35 @@
+<h1> Let's start! Players, pick your emoji! </h1>
+<br>
+<hr>
+<br>
+<form action="/game" method="post">
+
+  <div id="player1-container" style="display:block">
+    <h3>Player 1</h3>
+  <select name = "choice1" value="choice2">
+    <% emojis.each do |emoji| %>
+    <option value="<%= emoji.name%>"><img src="#{<%= emoji.img_path %>}"/><%= emoji.name %></option>
+    <%end%>
+  </select>
+  <% emojis.each do |emoji| %>
+  <a href= "/game" >
+    <img class="choices" id="player1"src="<%= emoji.img_path %>"/></a>
+    <%end%>
+  </div>
+
+<div id="player2-container" style="display:block">
+  <h3>Player 2</h3>
+  <select name = "choice2" value="choice2">
+    <% emojis.each do |emoji| %>
+    <option value="<%= emoji.name%>"><img src="#{<%= emoji.img_path %>}"/><%= emoji.name %></option>
+    <%end%>
+  </select>
+  <% emojis.each do |emoji| %>
+  <a href= "/game" >
+    <img class="choices" id="player1"src="<%= emoji.img_path %>"/></a>
+    <%end%>
+  </div>
+
+
+  <input type="submit" value="Say shoot!">
+</form>

@@ -1,0 +1,3 @@
+// $(".choices").each.....
+
+$('#player1').post("/game", { choice1: })
