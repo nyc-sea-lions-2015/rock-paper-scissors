@@ -29,7 +29,7 @@ class Logic
 
   def choose_winner
     # @game.winner_id = (@choice1 ? 1 : 2)
-    if @choice1
+    if rules
       @game.winner = @player1
       @game.loser = @player2
     else
