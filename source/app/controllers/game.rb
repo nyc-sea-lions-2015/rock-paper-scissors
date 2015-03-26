@@ -1,4 +1,4 @@
-get '/game' do
+get "/game" do
   cur_winner = params[:winner]
   player_1 = User.find_by(name: "Player 1")
   player_2 = User.find_by(name: "Player 2")
@@ -15,7 +15,7 @@ get '/game' do
                      }
 end
 
-post '/game' do
+post "/game" do
 
   player_1_token = Token.find_by(name: params[:player_1_token_name])
   player_2_token = Token.find_by(name: params[:player_2_token_name])
@@ -27,8 +27,10 @@ post '/game' do
                  )
 
   if cur_game.winner.is_a?(User)
+    #the query with the redirect on line 38 will not accept a whitespace
     cur_winner = "#{cur_game.winner.name.gsub(' ', '')}"
   else
+    #in cases of a tie, winner returns the string "Draw."
     cur_winner = cur_game.winner
   end
 
