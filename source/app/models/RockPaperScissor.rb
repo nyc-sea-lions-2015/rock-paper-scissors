@@ -43,7 +43,7 @@ class RockPaperScissors
   end
 
   def results(winning_player, losing_player, token1, token2)
-  results = [winning_player, losing_player, token1, token2]
+    [winning_player, losing_player, token1, token2]
   end
 
 end
