@@ -16,6 +16,7 @@ post '/game' do
   @current_game = RockPaperScissors.new(params)
   @winner,@loser = @current_game.determine_winner
 
+
   erb :results
 end
 
