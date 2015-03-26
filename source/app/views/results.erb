@@ -5,4 +5,17 @@
 <p>Loser is <%= @loser %></p>
 <p>With: <%= @losing_token %> </p>
 <br><br>
+
+<%if @winner=="Player One" %>
+  <p><%= @winner %> has won <%= @winner_wins %> times.</p>
+  <p><%= @winner %> has won with <%= @winning_token %> <%= Game.where(winner_id: @game.winner_id, choice_one_id: @game.choice_one_id).count %> times.</p><br>
+  <p><%= @loser %> has won <%= @loser_wins %> times.</p>
+  <p><%= @loser %> has lost with <%= @losing_token %> <%= Game.where(loser_id: @game.loser_id, choice_two_id: @game.choice_two_id).count %> times.</p>
+<%else%>
+  <p><%= @winner %> has won <%= @winner_wins %> times.</p>
+  <p><%= @winner %> has won with <%= @winning_token %> <%= Game.where(winner_id: @game.winner_id, choice_two_id: @game.choice_two_id).count %> times.</p><br>
+  <p><%= @loser %> has won <%= @loser_wins %> times.</p>
+  <p><%= @loser %> has lost with <%= @losing_token %> <%= Game.where(loser_id: @game.loser_id, choice_one_id: @game.choice_one_id).count %> times.</p>
+<%end%>
+
 <a href="/game/new">Play Again?</a>
