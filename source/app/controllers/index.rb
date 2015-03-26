@@ -1,6 +1,6 @@
 get '/' do
-  @game = Game.create
-  erb :"/games/#{@game.id}"
+  game = Game.create!
+  redirect "/games/#{game.id}"
 end
 
 

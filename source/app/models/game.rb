@@ -1,8 +1,8 @@
 class Game < ActiveRecord::Base
-	belongs_to :player_1, :class_name => 'User'
-	belongs_to :player_2, :class_name => 'User'
-  belongs_to :player_1_choice, :class_name => 'Token'
-  belongs_to :player_2_choice, :class_name => 'Token'
+	belongs_to :user_1, :class_name => 'User'
+	belongs_to :user_2, :class_name => 'User'
+  belongs_to :user_1_choice, :class_name => 'Token'
+  belongs_to :user_2_choice, :class_name => 'Token'
 
 
 
