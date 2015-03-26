@@ -7,6 +7,7 @@ get '/game' do
 end
 
 post '/game' do
+  cur_gameplay = Gameplay.new(params)
   @game = Game.new(params)
   if @game.save
     redirect "/games/#{@game.id}"
