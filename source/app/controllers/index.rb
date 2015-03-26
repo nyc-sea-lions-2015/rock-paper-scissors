@@ -10,9 +10,13 @@ end
 
 post '/game' do
   @params = params
+
+
   @current_game = RockPaperScissors.new(params)
   @winner,@loser,@winning_token,@losing_token = @current_game.determine_winner
 
+
+  records = Game.order(created_at: :desc)
   unless @current_game.determine_winner == nil
     Game.create(winner_id:@winner,
                 loser_id:@loser,
@@ -24,6 +28,8 @@ post '/game' do
 
   erb :results, locals: {last_game: Game.last,
                          player1: User.first,
-                         player2: User.last}
+                         player2: User.last,
+                         records: records
+                       }
 end
 
