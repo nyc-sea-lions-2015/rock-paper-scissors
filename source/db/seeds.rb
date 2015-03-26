@@ -3,17 +3,17 @@
 end
 
 token1 = {
-  name: "Rock",
+  name: "The Rock",
   image_url: "/images/rock.png"
 }
 
 token2 = {
-  name: "Paper",
+  name: "Parchment",
   image_url: "/images/paper.png"
 }
 
 token3 = {
-  name: "Scissors",
+  name: "Fiskars",
   image_url: "/images/scissors.png"
 }
 

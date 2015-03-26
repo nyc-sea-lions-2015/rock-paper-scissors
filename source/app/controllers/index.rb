@@ -13,10 +13,15 @@ post '/game' do
   player2_id = params[:player_2_id]
   token1 = params[:player_1_token_id]
   token2 = params[:player_2_token_id]
+
+  token1_id = Token.find_by(name: token1)
+  token2_id = Token.find_by(name: token2)
   current_game = RockPaperScissors.new(player1_id, player2_id, token1, token2)
   results = current_game.play
-  p results
-  #save winner, loser, and the tokens they used in Game
+  game = Game.create!(player_1_id: player1_id, player_2_id: player2_id, token_1_id: token2_id,
+    token_2_id: token2_id, winner_id: results[0], loser_id: results[1], winning_token: results[2],
+    losing_token: results[3])
+  p game
 end
 
 get '/results' do
