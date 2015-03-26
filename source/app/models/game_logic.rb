@@ -1,6 +1,20 @@
 class GameLogic
-  def initalize
-    # this will take in the params of player 1, player 2, player 1's move, and player 2's move
+
+# Rock = 1
+# Paper = 2
+# Scissor = 3
+
+
+  def initalize(player_1_id, player_2_id, player_1_token_id, player_2_token_id)
+    @player_1_id = player_1_id
+    @player_2_id = player_2_id
+    @player_1_token_id = player_1_token_id
+    @player_2_token_id = player_2_token_id
+  end
+
+  def solve
+
+
   end
 
 end
