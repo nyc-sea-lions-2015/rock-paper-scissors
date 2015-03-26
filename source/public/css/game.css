@@ -1,0 +1,41 @@
+body {
+	background-color: black;
+}
+
+#icon {
+	margin-left: 34em;
+	margin-top: -4em;
+}
+
+.choice {
+	-webkit-filter: invert(100%);
+	margin-left: 38em;
+	margin-top: 1em;
+}
+
+.player_form {
+	margin-left: 36em;
+	margin-top: 2em;
+}
+
+.submit_button {
+	font-family: sans-serif;
+	background-color: white;
+	border-radius: 10em;
+	font-weight: bold;
+	border-color: white;
+}
+
+.token_button {
+	margin-left: 50em;
+	font-family: sans-serif;
+	background-color: white;
+	border-radius: 10em;
+	font-weight: bold;
+	border-color: white;
+	display: none;
+}
+
+.option > input + img {
+	cursor: pointer;
+}

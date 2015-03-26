@@ -5,27 +5,29 @@
   <body>
     <form class = "player_form" action="/games/<%= game.id %>/user_1_name" method="post">
       <input type="hidden" name="_method" value="put">
-        <input type="text" name="user_1_name" value="player 1">
+        <input type="text" name="name" value="player 1">
       <input class="submit_button" type="submit">
     </form>
     <% unless game.user_1_choice %>
       <% tokens.each do |token| %>
-        <form action="/games/<%= game.id %>/user_1_choice_ID" method="post">
-          <input type="hidden" name="_method" value="put">
-          <input type="hidden" name="user_1_choice_ID" value="<%= token.id %>">
-          <input class="token_button"  type="submit" value="<%= token.name %>"><img class="choice" height="93em" weight="93em" src="<%=token.image%>"></input>
-        </form>
+        <label class="option">
+          <form action="/games/<%= game.id %>/user_1_choice_id" method="post">
+            <input type="hidden" name="_method" value="put">
+            <input type="hidden" name="user_1_choice_id" value="<%= token.id %>">
+            <input class="token_button"  type="submit" value="<%= token.name %>"><img class="choice" height="93em" weight="93em" src="<%=token.image%>"></input>
+          </form>
+        </label>
       <% end %>
     <% end %>
 
     <form class="player_form" action="/games/<%= game.id %>/user_2_name" method="post">
       <input type="hidden" name="_method" value="put">
-      <input type="text" name="user_2_name" value="player 2">
+      <input type="text" name="name" value="player 2">
       <input class="submit_button" type="submit">
     </form>
     <% unless game.user_2_choice %>
       <% tokens.each do |token| %>
-        <form  action="/games/<%= game.id %>/user_2_choice_ID" method="post">
+        <form  action="/games/<%= game.id %>/user_2_choice_id" method="post">
           
           <input type="hidden" name="_method" value=
           <input type="hidden" name="_method" value="put">
