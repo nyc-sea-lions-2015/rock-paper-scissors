@@ -1,7 +1,5 @@
 class RockPaperScissors
 
-  attr_reader :player_1_id, :player_2_id, :player_1_token_id, :player_2_token_id, :winner_id, :loser_id
-
   def initialize(params)
     @player_1_id = params['player_1_id'].to_i
     @player_2_id = params['player_2_id'].to_i
