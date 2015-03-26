@@ -1,10 +1,7 @@
 class Logic
-  def initialize(choice1, choice2)
-    choice1, choice2 = @choice1, @choice2
-    Game.create(  player_1: Player.find_by(id: 1),
-                  player_2: Player.find_by(id: 2),
-                  choice_1: @choice1,
-                  choice_2: @choice2)
+  def initialize(game, choice1, choice2)
+    @game = game
+    @choice1, @choice2 = choice1, choice2
     rules
     choose_winner
   end
@@ -18,14 +15,21 @@ class Logic
       @choice2 != 'bulbasaur'
     when 'bulbasaur'
       @choice2 != 'charmander'
+    else
+      return
     end
   end
 
   def choose_winner
-    Game.winner = (@choice1 == true ? 1 : 2)
+    # @game.winner_id = (@choice1 ? 1 : 2)
+    if @choice1
+      @game.winner_id = 1
+      @game.loser_id = 2
+    else
+      @game.winner_id = 2
+      @game.loser_id = 1
+    end
+    @game.save!
   end
 
 end
-
-# test1 = Logic.new("charmander", "squirtle")
-# # test1.run
