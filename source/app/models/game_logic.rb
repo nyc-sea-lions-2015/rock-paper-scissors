@@ -38,6 +38,9 @@ class GameLogic
       @loser = @player1_id
       @winning_choice = "rock"
       @losing_choice = "scissors"
+    elsif @player1[:choice] == @player2[:choice]
+      @winner = nil
+      p @played_token = @player1[:choice]
     end
   end
   def winner
@@ -47,9 +50,12 @@ class GameLogic
     @loser
   end
   def winning_token
-    p @winning_choice
+    @winning_choice
   end
   def losing_token
     @losing_choice
+  end
+  def played_token
+    p @played_token
   end
 end
