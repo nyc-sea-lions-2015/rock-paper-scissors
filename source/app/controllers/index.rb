@@ -13,3 +13,8 @@ get '/game' do
 
   erb :game
 end
+
+post '/game/:id' do
+  puts params
+
+end

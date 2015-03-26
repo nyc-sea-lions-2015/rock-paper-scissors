@@ -7,6 +7,7 @@
 <% end %>
 
 <form>
+  <form action="/game/<%= @all_players[0].id %>" method="post"/>
   <input type="text" placeholder="choose one" name="token_name"/>
   <input type="submit" value="SHOOT!">
 </form>
