@@ -3,6 +3,7 @@ get '/' do
 end
 
 get '/game' do
+  @tokens = Token.all
   erb :game
 end
 
