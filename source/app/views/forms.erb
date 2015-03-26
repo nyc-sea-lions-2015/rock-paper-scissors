@@ -1,0 +1,49 @@
+<script>
+  $(document).ready(function(){
+    $("#c_one").change(function(){
+      $(".player_one_form").hide("slow");
+      $(".player_two_form").show("slow");
+    });
+    $("#c_two").change(function(){
+      $(".player_two_form").hide("slow");
+      $("#throw").show("slow");
+    });
+  });
+</script>
+<h1>Rock, Paper, Scissors SHOOT!</h1>
+  <img class="img_one" src="/imgs/rock.jpg" alt="paper" height="100" width="100">
+  <img class="img_one" src="/imgs/paper.jpg" alt="paper" height="100" width="100">
+  <img class="img_one" src="/imgs/scissor.jpg" alt="paper" height="100" width="100">
+  <%if @counter==0 %>
+    <h3 style="color: red;">Tie, try again.</h3>
+  <%end%>
+
+  <form action="/newgame" method="post">
+    <p class="player_one_form">Player one select choice:</p>
+    <select id="c_one" class="player_one_form" name="choice1">
+        <option value="default">Choose</option>
+      <%Token.all.each do |v|%>
+        <option value="<%=v.id%>"><%=v.name%></option>
+      <%end%>
+    </select>
+
+    <br><br>
+    <p class="player_two_form">Player two select choice:</p>
+    <select id="c_two" class="player_two_form" name="choice2">
+      <option value="default">Choose</option>
+      <%Token.all.each do |v|%>
+        <option value="<%=v.id%>"><%=v.name%></option>
+      <%end%>
+    </select>
+    <br><br>
+    <input id="throw" type='submit' value='Shoot!' />
+  </form>
+
+
+
+
+
+
+
+
+
