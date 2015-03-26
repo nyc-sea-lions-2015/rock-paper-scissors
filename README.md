@@ -18,8 +18,7 @@ The challenge will be broken up into a few parts.
 
 **AJAX**   | Look at the [JQuery documentation](http://api.jquery.com/jquery.ajax) on how to create ajax request.
 
-**Bcrypt** | Look at the [Bcrypt Gem](https://github.com/codahale/bcrypt-ruby) for help on authentication.
-
+**JavaScript Timers** | Look at how we can use [setInterval](http://stackoverflow.com/questions/11075927/how-can-i-use-setinterval-or-settimeout-and-display-the-results-during-the-count) to do a countdown! 
 
 ## Releases 
 ### Pre-release: The Rundown
@@ -34,7 +33,9 @@ Complete each release fully before moving on. Each part will build on itself. Re
 
 
 ### Release 0: Building the backend
-First, create a data model and save your schema design in the top level of the git repository. Here are some basic requirements.
+First, Implement the data model displayed below with migrations, and models.
+
+![data-model](data-model.png)  
 
 - A game is played between two players.
 - Each player is prompted to choose a symbol: Rock, Paper, or Scissors.
