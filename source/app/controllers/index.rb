@@ -9,12 +9,8 @@ get '/game' do
 end
 
 post '/game' do
-  @params = params
-
-
   @current_game = RockPaperScissors.new(params)
   @winner,@loser,@winning_token,@losing_token = @current_game.determine_winner
-
 
   records = Game.order(created_at: :desc)
   unless @current_game.determine_winner == nil
