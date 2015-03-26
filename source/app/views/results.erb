@@ -1,15 +1,24 @@
 
-<p> Here are the results you passed into the form</p>
-
-<p>Player 1 id: <%= @current_game.player_1_id %></p>
-<p>Player 2 id: <%= @current_game.player_2_id %></p>
-<p>Player token id: <%= @current_game.player_1_token_id %></p>
-<p>Player token id: <%= @current_game.player_2_token_id %></p>
-<br />
-<br />
-<br />
-<br />
-<p>Winner is Player: <%= @winner %></p>
-<p>Loser is Player: <%= @loser %></p>
 
 
+
+<br />
+<br />
+<br />
+<br />
+<p>Winner is Player: <%= last_game.winner_id %></p>
+<p>Loser is Player: <%= last_game.loser_id %></p>
+
+<br />
+<br />
+
+<p>Player 1 win count: <%= player1.winners.count %></p>
+<p>Player 1 loss count: <%= player1.losers.count %></p>
+
+<br />
+<br />
+
+<p>Player 2 win count: <%= player2.winners.count %></p>
+<p>Player 2 loss count: <%= player2.losers.count %></p>
+
+<a href="/game">Click to play again!</a>

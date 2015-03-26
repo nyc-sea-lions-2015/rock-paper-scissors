@@ -9,14 +9,21 @@ get '/game' do
 end
 
 post '/game' do
-  # Input calls to game logic here with params
-  # Just test param input for now.
-
   @params = params
   @current_game = RockPaperScissors.new(params)
-  @winner,@loser = @current_game.determine_winner
+  @winner,@loser,@winning_token,@losing_token = @current_game.determine_winner
 
+  unless @current_game.determine_winner == nil
+    Game.create(winner_id:@winner,
+                loser_id:@loser,
+                winning_token_id:@winning_token,
+                losing_token_id:@losing_token)
+  else
+    redirect back
+  end
 
-  erb :results
+  erb :results, locals: {last_game: Game.last,
+                         player1: User.first,
+                         player2: User.last}
 end
 
