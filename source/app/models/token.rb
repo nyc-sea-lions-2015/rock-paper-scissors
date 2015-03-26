@@ -1,5 +1,3 @@
 class Token < ActiveRecord::Base
-    has_many :user_tokens
-    has_many :users, through: :user_tokens
-
+  belongs_to :game
 end
