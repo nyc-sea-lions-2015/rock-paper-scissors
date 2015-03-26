@@ -1,0 +1,30 @@
+  <h1 id="header"> Let's start! Players, pick your emoji!
+    <hr></h1>
+    <br>
+
+    <br>
+<div class="success">
+
+
+
+    <form id='MyGame' action="/game" method="post">
+
+      <div id="player1-container">
+
+        <h3>Player 1</h3>
+        <!-- <select name = "choice1" value="choice2"> -->
+        <% emojis.each do |emoji|%>
+        <label><input type="radio" name= "player1" value ="<%=emoji.name%>"><img src="<%= emoji.img_path %>"/></label>
+        <%end%>
+      </div>
+
+      <div id="player2-container">
+
+        <h3>Player 2</h3>
+        <% emojis.each do |emoji|%>
+        <label><input type="radio" name="player2" value ="<%=emoji.name%>"><img src="<%= emoji.img_path %>"/></label>
+        <%end%>
+      </form>
+
+
+    </div>
