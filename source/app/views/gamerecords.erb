@@ -3,7 +3,7 @@
  <h1> Game History </h1>
 
 <% @games.each do |g| %>
-<p> Game <%= g.id %> </p>
+<p><a href="/game/<%=g.id%>"> Game <%= g.id %> </a></p>
   <% end %>
 
 

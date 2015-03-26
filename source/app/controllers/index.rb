@@ -31,6 +31,11 @@ get '/gamerecords' do
   erb :gamerecords
 end
 
+get '/game/:id' do
+  @the_game = Game.find_by(:id => params[:id])
+  erb :gameshow
+end
+
 post '/players' do
   @new_player = User.new(:player_number => params[:player_number],
       :first_name => params[:first_name],
