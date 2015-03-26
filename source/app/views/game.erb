@@ -1,12 +1,12 @@
 <!-- DRY code with using iteratio of @tokens -->
-
+<h2>choose your weapon</h2>
 <form action="/game" method="post">
-  <div style="float:left;">
+  <div style="float:left;" id="player_1">
     <h3>player 1</h3>
     <input type="text" name="player_1_name" placeholder="Name">
     <br>
     <label for="rock"><img src="/imgs/rock1.png" alt="rock" /></label>
-    <input type="radio" name="player_1_token" value="rock" id="rock" checked>
+    <input type="radio" name="player_1_token" value="rock" id="rock">
     <label for="paper"><img src="/imgs/paper1.png" alt="paper" /></label>
     <input type="radio" name="player_1_token" value="paper" id="paper">
     <label for="scissors"><img src="/imgs/scissors1.png" alt="paper" /></label>
@@ -14,18 +14,20 @@
   </div>
   <br>
 
-  <div style="float:right;">
+  <div style="float:right;" id="player_2" style="visibility: hidden;">
     <h3>player 2</h3>
     <input type="text" name="player_2_name" placeholder="Name">
     <br>
     <label for="rock"><img src="/imgs/rock1.png" alt="rock" /></label>
-    <input type="radio" name="player_2_token" value="rock" id="rock" checked>
+    <input type="radio" name="player_2_token" value="rock" id="rock">
     <label for="paper"><img src="/imgs/paper1.png" alt="paper" /></label>
     <input type="radio" name="player_2_token" value="paper" id="paper">
     <label for="scissors"><img src="/imgs/scissors1.png" alt="paper" /></label>
     <input type="radio" name="player_2_token" value="scissors" id="scissors">
   </div>
 
-  <button style="clear: both;" type="submit">play!</button>
+  <div style="clear: both;">
+    <button style="clear: both;" type="submit">play!</button>
+  </div>
 </form>
 
