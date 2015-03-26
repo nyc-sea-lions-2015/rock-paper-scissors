@@ -12,6 +12,7 @@ post '/game/tie' do
 end
 
 post '/game' do
+  p params
   choices = params.values
   #TODO: if either choice isn't entered go to tie? raise error?
 
