@@ -9,11 +9,10 @@
 }
 
 .form {
-  width: 25%;
-  display: inline-block;
+  width: 15%;
+  text-align: center;
 }
 
-.spacer {
-  width: 40%;
+.inline-block {
   display: inline-block;
 }

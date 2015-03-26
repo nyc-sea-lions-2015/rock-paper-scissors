@@ -1,21 +1,29 @@
+<header id="header">
+<h1>Welcome to Kurt's Modest Rock, Paper, Scissors Game!</h1>
+</header>
+
 <h3 class="centered">Throw Your Token</h3>
 
-<div class="form">
-  <select class="form-control">
-  <option>Rock</option>
-  <option>Paper</option>
-  <option>Scissors</option>
-  </select>
-</div>
+<div class= "centered">
+  <div class="form">
+    <form action="/game/<%= @game.id %>/throws" method="post">
+      <input type="hidden" value="put" name="_method"/>
+      <p>Player 1:</p>
+        <select class="form-control" name="player_1_throw">
+          <option>rock</option>
+          <option>paper</option>
+          <option>scissors</option>
+        </select>
+        <br>
 
-<div class="spacer">
-</div>
-
-
-<div class="form">
-  <select class="form-control">
-  <option>Rock</option>
-  <option>Paper</option>
-  <option>Scissors</option>
-  </select>
+      <p>Player 2:</p>
+        <select class="form-control" name="player_2_throw">
+          <option>rock</option>
+          <option>paper</option>
+          <option>scissors</option>
+        </select>
+        <br>
+      <input type="submit" value="throw"/>
+    </form>
+  </div>
 </div>
