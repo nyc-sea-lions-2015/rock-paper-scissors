@@ -1,0 +1,42 @@
+<div id="results">
+<h1>Choose your destiny!!</h1>
+  <form id="game-form" action="/game" method="pqost">
+    <div id="p1">
+      <h2>Player 1, choose your Pokemon!</h2>
+      <% pokemon.each do |name| %>
+        <label>
+          <input type="radio" name="pokemon1" value="<%= name %>">
+          <img src="/img/<%= name %>.png">
+        </label>
+      <% end %>
+    </div>
+
+    <div id="p2">
+      <h2>Player 2, choose your Pokemon!</h2>
+      <% pokemon.each do |name| %>
+        <label>
+          <input type="radio" name="pokemon2" value="<%= name %>">
+          <img src="/img/<%= name %>.png">
+        </label>
+      <% end %>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+<!-- <p>Player 1</p>
+<form action "/game" method="post">
+<input type="radio" name="pokemon1" value="charmander" checked>Charmander
+<input type="radio" name="pokemon1" value="squirtle">Squirtle
+<input type="radio" name="pokemon1" value="bulbasaur">Bulbasaur -->
+
+<!-- <p>Player 2</p>
+<input type="radio" name="pokemon2" value="charmander" checked>Charmander
+<input type="radio" name="pokemon2" value="squirtle">Squirtle
+<input type="radio" name="pokemon2" value="bulbasaur">Bulbasaur
+<BR>
+<input type="submit" value="PLAY"/>
+</form> -->
