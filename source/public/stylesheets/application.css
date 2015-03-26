@@ -1,0 +1,12 @@
+#all-games {
+  margin-left: 60px;
+  border-bottom: 2px solid white;
+  width: 40%;
+}
+#games {
+  background-color: black;
+  color: pink;
+  height: 600px;
+  overflow: scroll;
+  width: 50%;
+}
