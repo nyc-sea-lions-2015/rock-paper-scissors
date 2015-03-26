@@ -1,3 +1,11 @@
 img {
   width: 300px;
 }
+
+#player2 {
+  display: none;
+}
+
+.radio input {
+  display: none;
+}
