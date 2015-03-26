@@ -6,7 +6,7 @@
 <!-- Tried to loop users and then inside loop tokens but "name=" wouldn't work because I need to have three that are token 1 and three that are token 2 -->
   <h1>Player 1: Pick a move!</h1>
     <% @tokens.each do |token| %>
-      <p><%= token.name %>
+      <p>
         <img src="/imgs/<%= token.name%>.png">
         <input type="radio" name="token1" value="<%= token.id %>"/>
       </p>
@@ -15,7 +15,7 @@
 
   <h1>Player 2: Pick a move!</h1>
     <% @tokens.each do |token| %>
-      <p><%= token.name %>
+      <p>
         <img src="/imgs/<%= token.name%>.png">
         <input type="radio" name="token2" value="<%= token.id %>"/>
       </p>

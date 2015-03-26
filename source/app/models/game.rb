@@ -1,6 +1,7 @@
 class Game < ActiveRecord::Base
-  has_many :tokens
+  # belongs_to :win_token, :class_name => 'Token'
+  # belongs_to :lose_token, :class_name => 'Token'
 
-  belongs_to :user1, :class_name => 'User'
-  belongs_to :user2, :class_name => 'User'
+  # belongs_to :winner, :class_name => 'User'
+  # belongs_to :loser, :class_name => 'User'
 end

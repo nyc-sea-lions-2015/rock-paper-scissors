@@ -1,10 +1,10 @@
 class CreateGames < ActiveRecord::Migration
   def change
     create_table :games do |t|
-      t.references :winner, class_name: "User"
-      t.references :loser, class_name: "User"
-      t.references :win_token, class_name: "Token"
-      t.references :lose_token, class_name: "Token"
+      t.integer :winner_id, class_name: "User"
+      t.integer :loser_id, class_name: "User"
+      t.integer :win_token_id, class_name: "Token"
+      t.integer :lose_token_id, class_name: "Token"
     end
   end
 end
