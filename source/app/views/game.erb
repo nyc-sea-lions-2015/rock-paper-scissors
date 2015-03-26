@@ -1,13 +1,18 @@
-<h1><%= @all_players[0].name %>, Make Your Choice!</h1>
-<% @all_tokens.each do |token| %>
+<h1>Players, Make Your Choice!</h1>
+<% tokens.each do |token| %>
  <figure>
   <img src="<%=token.url %>" height="82" width="82">
   <figcaption><%= token.name %></figcaption>
 </figure>
 <% end %>
 
-<form>
-  <form action="/game/<%= @all_players[0].id %>" method="post"/>
-  <input type="text" placeholder="choose one" name="token_name"/>
+
+<form action="/game" method="post">
+  <input type="text" placeholder="player one choice" name="player_1_token_name"/>
+  <input type="submit" value="SHOOT!">
+</form>
+
+<form action="/game" method="post">
+  <input type="text" placeholder="player two choice" name="player_2_token_1_name"/>
   <input type="submit" value="SHOOT!">
 </form>
