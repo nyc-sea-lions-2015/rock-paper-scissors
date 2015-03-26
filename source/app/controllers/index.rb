@@ -1,6 +1,6 @@
 get '/' do
-
-  erb :index
+  @game = Game.create
+  erb :"/games/#{@game.id}"
 end
 
 
