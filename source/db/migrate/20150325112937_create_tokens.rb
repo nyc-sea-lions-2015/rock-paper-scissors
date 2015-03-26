@@ -3,7 +3,6 @@ class CreateTokens < ActiveRecord::Migration
     create_table :tokens do |t|
       t.string :name, null: false
       t.binary :image, null: false
-      t.references :game
 
       t.timestamps null: false
     end
