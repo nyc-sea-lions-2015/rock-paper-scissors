@@ -21,7 +21,8 @@ get '/choice' do
 end
 
 get '/:id/result' do
-  @which_game = params[:id]
+  @which_game = Game.find_by(:id => params[:id])
+
   erb :result
 end
 
@@ -38,32 +39,51 @@ end
 
 
 post '/shoot' do
-  @user1choice = params[:user1choice]
-  @user2choice = params[:user2choice]
+  @user1choice = params[:player1choice]
+  @user2choice = params[:player2choice]
   @cur_player1 = User.find_by(:first_name => params[:p1_name])
   @cur_player2 = User.find_by(:first_name => params[:p2_name])
+
+  p params
+
   @cur_game = GameLogic.new(@user1choice,@user2choice)
 
+  p @cur_game
+
   if @cur_game.who_won == 1
-  @x = Game.new(:winner.first_name => @cur_player1,
+    puts "PLAYER 1"
+  @x = Game.new(:winner => @cur_player1,
     :loser => @cur_player2,
     :choice1 => @cur_game.u1choice,
     :choice2 => @cur_game.u2choice)
+
+  puts @x
+
   @x.save!
 
+  puts @x
+
   elsif @cur_game.who_won == 2
+    puts "PLAYER 2"
+    # @x = "Player 2 wins!"
     @x = Game.new(:winner => @cur_player2,
     :loser => @cur_player1,
     :choice1 => @cur_game.u1choice,
     :choice2 => @cur_game.u2choice)
+    puts @x
     @x.save!
+    puts @x
 
   elsif @cur_game.who_won == "tie"
-      @x = Game.new(:winner => nil,
+    puts "TIE"
+     # @x ="it's a tie!"
+    @x = Game.new(:winner => nil,
     :loser => nil,
     :choice1 => @cur_game.u1choice,
     :choice2 => @cur_game.u2choice)
+    puts @x
   @x.save!
+  puts @x
 
   end
 
