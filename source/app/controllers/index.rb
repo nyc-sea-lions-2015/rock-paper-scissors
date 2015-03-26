@@ -13,9 +13,12 @@ post '/game' do
   player2_id = params[:player_2_id]
   token1 = params[:player_1_token_id]
   token2 = params[:player_2_token_id]
-  current_game = RockPaperScissors.new( player1_id, player2_id, token1, token2 )
-  p current_game.play
-  redirect '/results'
+  current_game = RockPaperScissors.new(player1_id, player2_id, token1, token2)
+  results = current_game.play
+  winner_id = results[0]
+  loser_id = results[1]
+  winning_token = results[2]
+  losing_token = results[3]
 end
 
 get '/results' do
