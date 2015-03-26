@@ -1,20 +1,20 @@
 <div id="current_game_stats">
-  <p><%= @player_1.name %> for the win with <%= @winner_token %>!!!!</p>
+  <p><%= @winner.name %> for the win with <%= @winner_token %>!!!!</p>
 </div>
-<div id="player_1">
+<div id="winner">
   <h2>winner stats</h2>
-  <h3><%= @player_1.name %></h3>
+  <h3><%= @winner.name %></h3>
   <ul>
-    <li>Wins: <%= @player_1_wins %></li>
-    <li>Losses: <%= @player_1_losses %></li>
+    <li>Wins: <%= @winner_wins %></li>
+    <li>Losses: <%= @winner_losses %></li>
   </ul>
 </div>
-<div id="player_1">
+<div id="loser">
   <h2>loser stats</h2>
-  <h3><%= @player_2.name %></h3>
+  <h3><%= @loser.name %></h3>
   <ul>
-    <li>Wins: <%= @player_2_wins %></li>
-    <li>Losses: <%= @player_2_losses %></li>
+    <li>Wins: <%= @loser_wins %></li>
+    <li>Losses: <%= @loser_losses %></li>
   </ul>
 </div>
 <form action="/game" method="get">

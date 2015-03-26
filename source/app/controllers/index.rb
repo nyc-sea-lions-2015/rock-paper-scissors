@@ -19,16 +19,16 @@ end
 
 get '/game/:id' do
   @game = Game.find_by(id: params[:id])
-  player_1_id = @game.winner
-  @player_1 = User.find_by(id: player_1_id)
-  @player_1_wins = Game.find_by(winner: player_1_id).length
-  @player_1_losses = Game.find_by(loser: player_1_id).length
+  winner_id = @game.winner
+  @winner = User.find_by(id: winner_id)
+  @winner_wins = Game.find_by(winner: winner_id).length
+  @winner_losses = Game.find_by(loser: winner_id).length
   @winner_token = Token.find_by(id: @game.winner_token).name
 
-  player_2_id = @game.loser
-  @player_2 = User.find_by(id: player_2_id)
-  @player_2_wins = Game.find_by(winner: player_2_id).length
-  @player_2_losses = Game.find_by(loser: player_2_id).length
+  loser_id = @game.loser
+  @loser = User.find_by(id: loser_id)
+  @loser_wins = Game.find_by(winner: loser_id).length
+  @loser_losses = Game.find_by(loser: loser_id).length
   @loser_token = Token.find_by(id: @game.loser_token).name
 
   erb :show
