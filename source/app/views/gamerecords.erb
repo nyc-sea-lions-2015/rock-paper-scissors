@@ -1,0 +1,13 @@
+<center>
+
+ <h1> Game History </h1>
+
+<% @games.each do |g| %>
+<p> Game <%= g.id %> </p>
+  <% end %>
+
+
+  <p><a href="/players">Go to players list</a></p>
+<p><a href="/gamerecords">Go to games history</a></p>
+
+</center>

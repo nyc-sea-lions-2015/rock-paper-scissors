@@ -26,6 +26,11 @@ get '/:id/result' do
   erb :result
 end
 
+get '/gamerecords' do
+  @games = Game.all
+  erb :gamerecords
+end
+
 post '/players' do
   @new_player = User.new(:player_number => params[:player_number],
       :first_name => params[:first_name],
