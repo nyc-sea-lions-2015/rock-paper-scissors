@@ -3,6 +3,16 @@ get '/game' do
   erb(:game, locals: {emojis: images})
 end
 
+get '/game/tie' do
+
+  erb (:tie)
+end
+
+post '/game/tie' do
+  redirect '/game'
+
+end
+
 post '/game' do
   #has access to params
   # p params
@@ -29,15 +39,6 @@ get '/game/:id' do
   erb(:results, locals: {game: current_game, winner: current_game.winner_id, loser: current_game.loser_id})
 end
 
-get '/game/tie' do
-
-  erb (:tie)
-end
-
-post '/game/tie' do
-
-
-end
 
 #   <div id="player1-container" style="display:block">
 
