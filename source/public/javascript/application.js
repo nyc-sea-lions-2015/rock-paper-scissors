@@ -17,5 +17,6 @@ $(document).ready(function(){
 
   // })
 
+  $('btn btn-primary btn-lg')
 
 })
