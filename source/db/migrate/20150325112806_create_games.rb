@@ -5,8 +5,8 @@ class CreateGames < ActiveRecord::Migration
       t.references :user2, class_name: "User"
       t.integer :winner_id
       t.integer :loser_id
-      t.string :choice_1
-      t.string :choice_2
+      t.references :choice_1, class_name: "Token"
+      t.references :choice_2, class_name: "Token"
 
       t.timestamps null: false
     end

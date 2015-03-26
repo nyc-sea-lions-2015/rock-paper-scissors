@@ -1,4 +1,4 @@
-<img src="<%= Token.find_by(name: game.choice_1).img_path %>">
+<img src="<%= game.choice_1.img_path %>">
 <h1> WOMP WOMP... Try again <%=User.find(loser).player%></h1>
 
 
