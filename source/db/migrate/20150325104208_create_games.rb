@@ -5,8 +5,8 @@ class CreateGames < ActiveRecord::Migration
       t.references :user2
       t.string :winner
       t.string :loser
-      t.references :win_token, class_name: "Token", foreign_key: :win_token_id
-      t.references :lose_token, class_name: "Token", foreign_key: :lose_token_id
+      t.references :win_token, class_name: "Token"
+      t.references :lose_token, class_name: "Token"
     end
   end
 end

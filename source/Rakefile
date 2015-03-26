@@ -67,6 +67,17 @@ namespace :db do
     end
   end
 
+  desc "Does db:drop db:create db:migrate db:seed"
+  task :nuke do
+    unless ENV['RACK_ENV'] == 'production'
+      ['db:drop', 'db:create', 'db:migrate', 'db:seed'].each do |step|
+        system("bundle exec rake #{step}")
+      end
+    else
+      puts 'No.'
+    end
+  end
+
   desc "Returns the current schema version number"
   task :version do
     puts "Current version: #{ActiveRecord::Migrator.current_version}"

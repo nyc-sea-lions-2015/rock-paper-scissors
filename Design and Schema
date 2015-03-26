@@ -1,0 +1,25 @@
+Design and Schema
+#################
+
+#####Game#####
+Will have 5 rounds(stretch)
+Will have three possible symbols for each choice
+Will have winner
+Will have loser
+
+#####Game Checker######
+Will check for win
+Holds all win/lose/tie conditions
+
+#####Rounds#####(stretch)
+One game to many rounds. (One to many) (stretch)
+
+#####Users#####
+Will have a name
+User has many games
+
+#####Symbol#####
+Will have symbol name
+Will have an image (using relative path)
+Belongs to Game
+

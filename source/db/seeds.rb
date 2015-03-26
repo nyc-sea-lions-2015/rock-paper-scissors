@@ -1,5 +1,5 @@
-["ROCK WIZARDDD", "BARBER SCISSORS", "2PLY TOILET PPAER"].each do |t|
-  Token.create(name: t)
+["rock", "paper", "scissors"].each do |t|
+  Token.create(name: t, image: "/imgs/"+t+".png")
 end
 
 ["Max", "Ryan"].each do |u|

@@ -1,40 +1,54 @@
 <form action='/game' method='post'>
   <input type="hidden" name="user1" value="<%= @user1.id %>">
   <input type="hidden" name="user2" value="<%= @user2.id %>">
-<h1>Player 1: Pick a move!</h1>
 
 <!-- TODO: loop through and have loop thru images and with ID as value -->
-<%  %>
+  <% @users.each do |user| %>
+  <input type="hidden" name="user<%= user.id%>" value="<%= user.id %>">
+  <h1>Player <%= user.id %>: Pick a move!</h1>
+    <% @tokens.each do |token| %>
+      <p><%= token.name %>
+        <img src="/imgs/<%= token.name%>.png">
+        <input type="radio" name="token<%= token.id%>" value="<%= token.id %>"/>
+      </p>
+      <br>
+    <% end %>
+  <% end %>
+  <input type="submit" value="BATTLE"/>
+</form>
+
+
+<!--   <h1>Player 1: Pick a move!</h1>
   <p>ROCK WIZARDDD!
-    <img src="/imgs/Rock_Wizard.png">
-    <input type="radio" name="token1" title="ROCK WIZARDDD" value="1"/>
+    <img src="/imgs/rock.png">
+    <input type="radio" name="token1" value="1">
   </p>
   <br>
   <p>BARBER SCISSORS!
     <img src="/imgs/scissors.png">
-    <input type="radio" name="token1" title="BARBER SCISSORS" value="scissors"/>
+    <input type="radio" name="token1" value="2">
   </p>
   <br>
   <p>2PLY TOILET PAPER!
-    <img src="/imgs/cartoon-running-toilet-paper.png">
-    <input type="radio" name="token1" title="2PLY TOILET PAPER" value="paper"/>
+    <img src="/imgs/paper.png">
+    <input type="radio" name="token1" value="3">
   </p>
 <h1>Player 2: Pick a move!</h1>
 
   <p>ROCK WIZARDDD!
-    <img src="/imgs/Rock_Wizard.png">
-    <input type="radio" name="token2" title="ROCK WIZARDDD" value="rock"/>
+    <img src="/imgs/rock.png">
+    <input type="radio" name="token2" value="1">
   </p>
   <br>
   <p>BARBER SCISSORS!
     <img src="/imgs/scissors.png">
-    <input type="radio" name="token2" title="BARBER SCISSORS" value="scissors"/>
+    <input type="radio" name="token2" value="2">
   </p>
   <br>
   <p>2PLY TOILET PAPER!
-    <img src="/imgs/cartoon-running-toilet-paper.png">
-    <input type="radio" name="token2" title="2PLY TOILET PAPER" value="paper"/>
+    <img src="/imgs/paper.png">
+    <input type="radio" name="token2" value="3">
   </p>
   <input type="submit" value="BATTLE"/>
 </form>
-
+ -->
