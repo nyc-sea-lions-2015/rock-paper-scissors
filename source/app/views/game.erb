@@ -1,5 +1,6 @@
+<div id="results">
 <h1>Choose your destiny!!</h1>
-  <form action="/game" method="post">
+  <form id="game-form" action="/game" method="pqost">
     <div id="p1">
       <h2>Player 1, choose your Pokemon!</h2>
       <% pokemon.each do |name| %>
@@ -9,7 +10,7 @@
         </label>
       <% end %>
     </div>
-    <BR>
+
     <div id="p2">
       <h2>Player 2, choose your Pokemon!</h2>
       <% pokemon.each do |name| %>
@@ -19,8 +20,8 @@
         </label>
       <% end %>
     </div>
-    <input type="submit" value="PLAY"/>
   </form>
+</div>
 
 
 
