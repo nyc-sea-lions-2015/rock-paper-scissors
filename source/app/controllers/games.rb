@@ -19,13 +19,17 @@ post "/game" do
          looser_id: loser.id,
           winning_token: winning_token,
           losing_token: losing_token)
-
-
+  if game.save!
+    redirect "/games/#{game.id}"
+  else
+    [402, "something is not right"]
+  end
 end
 
-
-# @choices = ["rock", "paper", "scissors"]
-     # @player1_id=args.fetch(:player1_id);
-     # @player2_id=args.fetch(:player2_id);
-     # @choice1=args.fetch(:choice1);
-     # @choice2=args.fetch(:choice2);
+get "/games/:id" do
+  @games = Game.all
+  @game = Game.find_by(id: params[:id])
+  @winner = Player.find_by(id: @game.winner_id)
+  @looser = Player.find_by(id: @game.looser_id)
+  erb :"game/results"
+end

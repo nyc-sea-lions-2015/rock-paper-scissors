@@ -1,0 +1,17 @@
+<h1>Game's result</h1>
+<p>Winner: <%=@winner.name%>, played with <%=@game.winning_token%></p>
+<p>Looser: <%=@looser.name%>, played with <%=@game.losing_token%></p>
+<p>other games result: </p>
+<ul>
+<% @games.each do |g| %>
+  <li>
+    <% winner = Player.find_by(id: g.winner_id)%>
+    <% looser = Player.find_by(id: g.looser_id)%>
+    <% winning_token = g.winning_token%>
+    <% losing_token = g.losing_token%>
+    <p>Game's <%=g.id%> results: </p>
+    <p>winner: <%=winner.name%>, played with <%=winning_token%></p></p>
+    <p>looser: <%=looser.name %>, played with <%=losing_token%></p>
+  </li>
+<% end %>
+</ul>
