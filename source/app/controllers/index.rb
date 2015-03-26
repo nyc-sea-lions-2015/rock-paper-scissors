@@ -7,10 +7,8 @@ get '/game' do
 end
 
 post '/game' do
-  # have the parameters player_1 id
-  # have parameter player_2_id
-  # have the parameter player_1_token
-  # have the parameter player_2_token
+
+  # p "Player 1 id:  #{params[:player_1_id]} , Player 2 id: #{params[:player_2_id]}, Player 1 token id: #{params[:player_1_token_id]}, Player 2 token id #{params[:player_2_token_id]} "
 
   current_game_logic = Game_logic.new(player_1_id: params[:player_1_id], player_2_id: params[:player_2_id], player_1_token_id: params[:player_1_token_id], player_2_token_id: params[:player_2_token_id])
 

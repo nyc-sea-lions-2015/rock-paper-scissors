@@ -5,14 +5,12 @@ class GameLogic
 # Scissor = 3
 
 # RULES = {
-#   "rock" => "scissor",
-#   "paper" => "rock",
-#   "scissor" => "paper"
+#   "rock" (1) => "scissor", (3)
+#   "paper" (2) => "rock", (1)
+#   "scissor"(3) => "paper" (2)
 # }
 
-RULES = {
 
-}
   def initalize(player_1_id, player_2_id, player_1_token_id, player_2_token_id)
     @player_1_id = player_1_id
     @player_2_id = player_2_id
@@ -21,6 +19,7 @@ RULES = {
   end
 
   def solve
+   if @player_1_token_id ==
 
 
   end
