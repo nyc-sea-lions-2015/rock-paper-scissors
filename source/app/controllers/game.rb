@@ -1,4 +1,5 @@
 get "/game" do
+  player_1_token = params[:token_1] || ""
   cur_winner = params[:winner]
   player_1 = User.find_by(name: "Player 1")
   player_2 = User.find_by(name: "Player 2")
@@ -11,8 +12,14 @@ get "/game" do
   erb :game, locals: {
                       tokens: all_tokens,
                       players: all_players,
-                      winner: cur_winner
+                      winner: cur_winner,
+                      token_1: player_1_token
                      }
+end
+
+post "/player_1" do
+  player_1_token = params[:player_1_token]
+  redirect "/game?token_1=#{player_1_token}"
 end
 
 post "/game" do
