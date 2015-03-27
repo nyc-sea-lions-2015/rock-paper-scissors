@@ -19,10 +19,3 @@ put '/game/:game_id/throws' do
   erb :'outcome'
 end
 
-get '/outcome' do
-  @game = Game.find(params[:game_id])
-
-
-
-  erb :'outcome'
-end
