@@ -8,9 +8,23 @@ get '/game' do
 end
 
 post '/game' do
-  redirect '/game' if params[:player_1_token] == params[:player_2_token]
-  cur_gameplay = Gameplay.new(params)
-  @game = Game.new(params)
+  if params[:player_1_token] == params[:player_2_token]
+    redirect '/game'
+  end
+  args = {
+  player_1: User.find_by(name: params[:player_1_name]),
+  player_2: User.find_by(name: params[:player_2_name]),
+  player_1_token: params[:player_1_token],
+  player_2_token: params[:player_2_token]
+  }
+  puts "This is ARGS: #{args}"
+  cur_gameplay = Gameplay.new(args)
+  results = cur_gameplay.find_winner
+  puts "This is RESULTS: #{results}"
+  @game = Game.new(winner: User.find_by(name: results[:winner]),
+                  loser: User.find_by(name: results[:loser]),
+                  winner_token: Token.find_by(name: results[:winner_token]),
+                  loser_token: Token.find_by(name: results[:loser_token]))
   if @game.save
     redirect "/games/#{@game.id}"
   else
