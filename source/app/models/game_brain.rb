@@ -1,16 +1,16 @@
 class GameBrain
   WINNER_TABLE = {
-    "rock,rock" => ->(throws){ nil },
+    "rock,rock" => ->(throws){ [nil, nil] },
     "rock,paper" => ->(throws){ [throws.second, throws.first] },
     "rock,scissors" => ->(throws){ [throws.first, throws.second] },
 
     "paper,rock" => ->(throws){ [throws.second, throws.first] },
-    "paper,paper" => ->(throws){ nil },
+    "paper,paper" => ->(throws){ [nil, nil] },
     "paper,scissors" => ->(throws){ [throws.second, throws.first] },
 
     "scissors,rock" => ->(throws){ [throws.second, throws.first] },
     "scissors,paper" => ->(throws){ [throws.first, throws.second] },
-    "scissors,scissors" => ->(throws){ nil },
+    "scissors,scissors" => ->(throws){ [nil, nil] },
   }
 
   def initialize(throws)
