@@ -17,12 +17,16 @@ get '/throw_2/:player_id/:token_id' do
 end
 
 post '/record_throw_2' do
-  p params
-  game = Game.new north_player_id: params[:north_player_id],
-    south_player_id: params[:south_player_id],
-    north_token_id: params[:north_token_id],
-    south_token_id: params[:south_token_id]
-  process_game(game, params)
+  new_game = Game.create
+  new_game.throws.create([params[:north_throw], params[:south_throw]])
+  new_game.save
+  if (result = process_game(new_game.throws.to_a)).nil?
+    'tie'
+  else
+    winner, loser = *result
+    new_game.update(winning_throw_id: winner.id, losing_throw_id: loser.id)
+    winner.user.name + " wins"
+  end
 end
 
 get '/stats' do
