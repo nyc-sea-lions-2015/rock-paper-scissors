@@ -16,3 +16,18 @@ get '/throw_2/:player_id/:token_id' do
   erb :throw_2
 end
 
+post '/record_throw_2' do
+  p params
+  game = Game.new north_player_id: params[:north_player_id],
+    south_player_id: params[:south_player_id],
+    north_token_id: params[:north_token_id],
+    south_token_id: params[:south_token_id]
+  process_game(game, params)
+end
+
+private
+  def process_game(game, params)
+    GameBrain.new(game,
+                  Token.find(params[:north_token_id]),
+                  Token.find(params[:south_token_id])).calculate_winner!
+  end
