@@ -17,7 +17,7 @@ class GameBrain
     @throws = throws
   end
 
-  def calculate_winner
+  def winner_and_loser
     WINNER_TABLE[key].call(@throws)
   end
 

@@ -21,11 +21,11 @@ end
 
 post '/record_throw_2' do
   new_game = game_from_params
-  if (result = process_game(new_game.throws.to_a)).nil?
+  winner, loser = GameBrain.new(new_game.throws).winner_and_loser
+  if winner.nil?
     'tie'
   else
-    winner, loser = *result
-    new_game.update(winning_throw_id: winner.id, losing_throw_id: loser.id)
+    new_game.update(winning_throw: winner, losing_throw: loser)
     winner.user.name + " wins"
   end
 end
@@ -36,8 +36,6 @@ get '/stats' do
 end
 
 private
-  def process_game(game)
-    GameBrain.new(game).calculate_winner
 
   def game_from_params
     new_game = Game.create
@@ -45,4 +43,12 @@ private
     new_game.save
     new_game
   end
+
+  def first_player_params
+    { user_id: session[:first_player_id], token_id: session[:first_token_id] }
   end
+
+  def second_player_params
+    params[:second_player]
+  end
+
