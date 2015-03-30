@@ -1,8 +1,5 @@
 <form method="POST" action="/record_throw_2">
-  <input type="hidden" name="[north_throw][user_id]" id="" value="<%= @north_player.id %>" />
-  <input type="hidden" name="[north_throw][token_id]" id="" value="<%= @north_token.id %>" />
-
-  <%= erb :_users,  locals: { users: @users, form_name: '[south_throw][user_id]' }  %>
-  <%= erb :_tokens, locals: {                form_name: '[south_throw][token_id]'  } %>
+  <%= erb :_users,  locals: { users: @users, form_name: '[second_player][user_id]' }  %>
+  <%= erb :_tokens, locals: {                form_name: '[second_player][token_id]'  } %>
   <input type="submit">Shoot!</input>
 </form>

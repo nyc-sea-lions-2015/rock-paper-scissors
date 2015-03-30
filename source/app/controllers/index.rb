@@ -9,20 +9,18 @@ get '/throw_1' do
 end
 
 post '/record_throw_1' do
-  redirect "/throw_2/#{params[:player_id]}/#{params[:token_id]}"
+  session[:first_player_id] = params[:player_id]
+  session[:first_token_id] = params[:token_id]
+  redirect '/throw_2'
 end
 
-get '/throw_2/:player_id/:token_id' do
-  @north_player = User.find(params[:player_id])
-  @north_token = Token.find(params[:token_id])
-  @users = User.where.not(id: @north_player)
+get '/throw_2' do
+  @users = User.where.not(id: User.find(session[:first_player_id]))
   erb :throw_2
 end
 
 post '/record_throw_2' do
-  new_game = Game.create
-  new_game.throws.create([params[:north_throw], params[:south_throw]])
-  new_game.save
+  new_game = game_from_params
   if (result = process_game(new_game.throws.to_a)).nil?
     'tie'
   else
@@ -40,4 +38,11 @@ end
 private
   def process_game(game)
     GameBrain.new(game).calculate_winner
+
+  def game_from_params
+    new_game = Game.create
+    new_game.throws.create([first_player_params, second_player_params])
+    new_game.save
+    new_game
+  end
   end
