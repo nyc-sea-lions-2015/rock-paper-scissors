@@ -6,7 +6,7 @@ north_user = User.create name: "Player One"
 south_user = User.create name: "Player Two"
 
 %w, rock paper scissors,.each do |symname|
-  Token.create name: symname, url: "n/a"
+  Token.create name: symname, url: "/imgs/#{symname}.jpg"
 end
 
 demo_game = Game.create

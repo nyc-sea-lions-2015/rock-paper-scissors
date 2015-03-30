@@ -1,5 +1,5 @@
 <form method="POST" action="/record_throw_1">
   <%= erb :_users,  locals: { users: @users, form_name: 'player_id' }  %>
-  <%= erb :_tokens, locals: {                form_name: 'token_id'  } %>
+  <%= erb :_tokens, locals: {                form_name: 'token_id', form_action: '/record_throw_1'  } %>
   <input type="submit">Shoot!</input>
 </form>
