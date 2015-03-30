@@ -3,6 +3,8 @@ get '/' do
 end
 
 get '/throw_1' do
+  @users = User.all.to_a
+  @tokens = Token.all.to_a
   erb :throw_1
 end
 
@@ -13,6 +15,7 @@ end
 get '/throw_2/:player_id/:token_id' do
   @north_player = User.find(params[:player_id])
   @north_token = Token.find(params[:token_id])
+  @users = User.where.not(id: @north_player)
   erb :throw_2
 end
 

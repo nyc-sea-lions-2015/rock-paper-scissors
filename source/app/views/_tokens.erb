@@ -1,0 +1,5 @@
+<select name="<%= form_name %>">
+  <% Token.all.each do |token| %>
+    <option value="<%= token.id %>"><%= token.name %></option>
+  <% end %>
+</select>

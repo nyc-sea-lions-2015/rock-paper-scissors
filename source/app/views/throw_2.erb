@@ -2,15 +2,7 @@
   <input type="hidden" name="[north_throw][user_id]" id="" value="<%= @north_player.id %>" />
   <input type="hidden" name="[north_throw][token_id]" id="" value="<%= @north_token.id %>" />
 
-  <select name="[south_throw][user_id]">
-    <% User.all.each do |user| %>
-      <option value="<%= user.id %>"><%= user.name %></option>
-    <% end %>
-  </select>
-  <select name="[south_throw][token_id]">
-    <% Token.all.each do |token| %>
-      <option value="<%= token.id %>"><%= token.name %></option>
-    <% end %>
-  </select>
+  <%= erb :_users,  locals: { users: @users, form_name: '[south_throw][user_id]' }  %>
+  <%= erb :_tokens, locals: {                form_name: '[south_throw][token_id]'  } %>
   <input type="submit">Shoot!</input>
 </form>
