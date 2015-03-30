@@ -21,16 +21,19 @@ end
 
 post '/record_throw_2' do
   new_game = game_from_params
+  session[:new_game_id] = new_game.id
+  redirect '/stats'
+end
+
+get '/stats' do
+  new_game = Game.find(session[:new_game_id]) || Game.last
   winner, loser = GameBrain.new(new_game.throws).winner_and_loser
-  if winner.nil?
-    'tie'
+  @message = if winner.nil?
+    'There was a tie'
   else
     new_game.update(winning_throw: winner, losing_throw: loser)
     winner.user.name + " wins"
   end
-end
-
-get '/stats' do
   @games = Game.all.to_a
   erb :games
 end

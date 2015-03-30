@@ -1,3 +1,15 @@
-<% @games.each do |game| %>
-  <li><%= game.winning_throw.user.name %></li>
-<% end %>
+<table border="1">
+  <thead>
+    <th>
+      <td>Game ID</td>
+      <td>Winner</td>
+      <td>Summary</td>
+      <td>Loser</td>
+    </th>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
+      <%= erb :_game, locals: { game: game } %>
+    <% end %>
+  </tbody>
+</table>
