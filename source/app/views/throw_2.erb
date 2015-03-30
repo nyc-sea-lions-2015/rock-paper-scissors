@@ -1,0 +1,16 @@
+<form method="POST" action="/record_throw_2">
+  <input type="hidden" name="north_player_id" id="" value="<%= @north_player.id %>" />
+  <input type="hidden" name="north_token_id" id="" value="<%= @north_token.id %>" />
+
+  <select name="south_player_id">
+    <% User.all.each do |user| %>
+      <option value="<%= user.id %>"><%= user.name %></option>
+    <% end %>
+  </select>
+  <select name="south_token_id">
+    <% Token.all.each do |token| %>
+      <option value="<%= token.id %>"><%= token.name %></option>
+    <% end %>
+  </select>
+  <input type="submit">Shoot!</input>
+</form>
