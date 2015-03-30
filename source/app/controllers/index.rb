@@ -25,6 +25,11 @@ post '/record_throw_2' do
   process_game(game, params)
 end
 
+get '/stats' do
+  @games = Game.all.to_a
+  erb :games
+end
+
 private
   def process_game(game, params)
     GameBrain.new(game,
