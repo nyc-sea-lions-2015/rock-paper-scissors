@@ -1,0 +1,13 @@
+<form method="POST" action="/record_throw_1">
+  <select name="player_id">
+    <% User.all.each do |user| %>
+      <option value="<%= user.id %>"><%= user.name %></option>
+    <% end %>
+  </select>
+  <select name="token_id">
+    <% Token.all.each do |token| %>
+      <option value="<%= token.id %>"><%= token.name %></option>
+    <% end %>
+  </select>
+  <input type="submit">Shoot!</input>
+</form>

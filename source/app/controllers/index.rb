@@ -3,4 +3,5 @@ get '/' do
 end
 
 get '/throw_1' do
+  erb :throw_1
 end
