@@ -31,8 +31,6 @@ get '/stats' do
 end
 
 private
-  def process_game(game, params)
-    GameBrain.new(game,
-                  Token.find(params[:north_token_id]),
-                  Token.find(params[:south_token_id])).calculate_winner!
+  def process_game(game)
+    GameBrain.new(game).calculate_winner
   end
