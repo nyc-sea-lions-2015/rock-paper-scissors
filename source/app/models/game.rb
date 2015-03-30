@@ -1,5 +1,5 @@
 class Game < ActiveRecord::Base
-  belongs_to :north_player, class_name: 'User'
-  belongs_to :south_player, class_name: 'User'
-  belongs_to :winning_player, class_name: 'User'
+  has_many :throws
+  belongs_to :winning_throw, class_name: 'Throw'
+  belongs_to :losing_throw, class_name: 'Throw'
 end
