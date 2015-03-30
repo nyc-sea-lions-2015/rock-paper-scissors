@@ -1,13 +1,9 @@
-DONE
-
-users
-id|name
-
-symbols
-id | symbol_image_url
-
-TODO
+New Proposed Schema
+===================
 
 games
-id | north_player_id | south_player_id | north_symbol_id | south_symbol_id | winning_player_id | losing_player_id
-
+ |id|winning_throw_id|losing_throw_id
+ \----> throw
+ \       |id|game_id|user_id|symbol_id
+ \----> throw
+         |id|game_id|user_id|symbol_id
