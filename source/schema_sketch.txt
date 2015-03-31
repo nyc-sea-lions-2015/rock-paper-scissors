@@ -1,0 +1,9 @@
+New Proposed Schema
+===================
+
+games
+ |id|winning_throw_id|losing_throw_id
+ \----> throw
+ \       |id|game_id|user_id|symbol_id
+ \----> throw
+         |id|game_id|user_id|symbol_id

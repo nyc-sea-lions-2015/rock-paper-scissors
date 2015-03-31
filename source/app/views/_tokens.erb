@@ -1,0 +1,7 @@
+<p>
+  <% Token.all.each do |token| %>
+    <input type="radio" name="<%= form_name %>" value="<%= token.id %>">
+     <img src="<%= token.url %>" width="150" height="100">
+    </input>
+  <% end %>
+</p>
