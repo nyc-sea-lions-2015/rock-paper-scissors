@@ -20,6 +20,7 @@ post '/record_throw_1' do
 end
 
 get '/throw_2' do
+  redirect '/throw_1' unless session[:first_player_id]
   @users = User.where.not(id: User.find(session[:first_player_id]))
   erb :throw_2
 end
