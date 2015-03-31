@@ -2,6 +2,11 @@ get '/' do
   redirect '/throw_1'
 end
 
+get '/js' do
+  @users = User.all
+  erb :js
+end
+
 get '/throw_1' do
   @users = User.all.to_a
   @tokens = Token.all.to_a
@@ -25,6 +30,21 @@ post '/record_throw_2' do
   redirect '/stats'
 end
 
+post '/record.json' do
+  content_type :json
+  new_game = Game.create
+  new_game.throws.create([{user_id: params[:player_id], token_id: params[:token_id]}, second_player_params])
+  new_game.save
+  winner, loser = GameBrain.new(new_game.throws).winner_and_loser
+  body = if winner.nil?
+           { message: "There was a tie" }.to_json
+         else
+           new_game.update(winning_throw: winner, losing_throw: loser)
+           session[:new_game_id] = new_game.id
+           new_game.to_json
+         end
+end
+
 get '/stats' do
   new_game = Game.find(session[:new_game_id]) || Game.last
   winner, loser = GameBrain.new(new_game.throws).winner_and_loser
@@ -35,7 +55,12 @@ get '/stats' do
     winner.user.name + " wins"
   end
   @games = Game.all.to_a
-  erb :games
+  erb :games_with_message
+end
+
+get '/games_history' do
+  @games = Game.all.to_a
+  erb :_games, layout: false
 end
 
 private

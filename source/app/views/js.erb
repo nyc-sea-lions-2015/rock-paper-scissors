@@ -1,0 +1,16 @@
+<form action="/record.json" method="POST">
+  <div id="interface">
+    <div id="first">
+      <h2>Tell us about the first player</h2>
+      <%= erb :_users,  locals: { users: @users, form_name: 'player_id' } %>
+      <%= erb :_tokens, locals: { form_name: 'token_id', form_action: '/record_throw_1' } %>
+    </div>
+
+    <div id="second">
+      <h2>Tell us about the second player</h2>
+      <%= erb :_users,  locals: { users: @users, form_name: '[second_player][user_id]' } %>
+      <%= erb :_tokens, locals: { form_name: '[second_player][token_id]' } %>
+    </div>
+    <input type="submit" id="submit-button">
+  </div>
+</form>

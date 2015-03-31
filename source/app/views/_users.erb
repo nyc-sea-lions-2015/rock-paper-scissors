@@ -1,5 +1,5 @@
 <label for="user_names">User Names:</label>
-<select id="user_names" name="<%= form_name %>">
+<select id="user_names" class="user_names" name="<%= form_name %>">
   <% users.each do |user| %>
     <option value="<%= user.id %>"><%= user.name %></option>
   <% end %>
