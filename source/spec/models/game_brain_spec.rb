@@ -23,6 +23,36 @@ describe "Game Brain" do
   end 
 
   it "should choose the correct winner rock vs paper" do
+    params[:player_one_throw] = paper.id
+    params[:player_two_throw] = rock.id
+
+    brain = GameBrain.new(params)
+    
+    expect(brain.winner).to eq( {player: player_1, token: paper } )
+    expect(brain.loser).to  eq( {player: player_2, token: rock } )
+  end
+
+  it "should choose the correct winner paper vs scissors" do
+    params[:player_one_throw] = scissor.id
+    params[:player_two_throw] = paper.id
+
+    brain = GameBrain.new(params)
+    
+    expect(brain.winner).to eq( {player: player_1, token: scissor} )
+    expect(brain.loser).to  eq( {player: player_2, token: paper } )
+  end
+  
+  it "should choose the correct winner scissors vs rock" do
+    params[:player_one_throw] = rock.id
+    params[:player_two_throw] = scissor.id
+
+    brain = GameBrain.new(params)
+    
+    expect(brain.winner).to eq( {player: player_1, token: rock } )
+    expect(brain.loser).to  eq( {player: player_2, token: scissor } )
+  end
+
+  it "should choose the correct winner rock vs paper player-2" do
     params[:player_one_throw] = rock.id
     params[:player_two_throw] = paper.id
 
@@ -51,7 +81,6 @@ describe "Game Brain" do
     expect(brain.winner).to eq( {player: player_2, token: rock } )
     expect(brain.loser).to  eq( {player: player_1, token: scissor } )
   end
-
   it "should throw an expection if there is a tier" do
     
     params[:player_one_throw] = scissor.id

@@ -4,12 +4,23 @@
   </div>
 </div>
 <div class='row body'>
-  <div class='small-12 columns'>
+  <div class='small-5 columns'>
     <div>
       <%= game.winner.username.upcase %>
     </div>
     <div>
-      <img class='throw' src='<%= game.winning_token.url %>' />
+      <img class='throw' src='<%= game.winning_token.url %>' /> 
+    </div>
+  </div>
+  <div class='small-2 columns'>
+    Beats
+  </div>
+  <div class='small-5 columns'>
+    <div>
+      <%= game.loser.username.upcase %>
+    </div>
+    <div>
+      <img class='throw' src='<%= game.losing_token.url %>' /> 
     </div>
   </div>
 </div>
