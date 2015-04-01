@@ -1,4 +1,11 @@
 <div class='row body'>
+  <% if @was_tie %>
+    <div class='small-12 columns'>
+      THE GAME WAS A TIE... SHOOT AGAIN!
+    </div>
+  <% end %>
+</div>
+<div class='row body'>
   <div class='small-12 columns'>
     <div class='row'>
       <% tokens.each do |token| %>

@@ -1,26 +1,28 @@
-require 'pry'
-
 get '/' do
   @tokens = Token.all
   erb :index  
 end
 
 get '/games' do
+ @was_tie = params[:tie] || false 
  erb :game, locals: {tokens: Token.all, players: User.all}
 end
 
 post '/games' do
 
-  player_one = User.find_by(id: params[:player_id][0])
-  player_two = User.find_by(id: params[:player_id][1])
+  begin
+  game_outcome = GameBrain.new({ player_one_id: params[:player_id][0],
+                                 player_two_id: params[:player_id][1],
+                                 player_one_throw: params[:player_throw][0], 
+                                 player_two_throw: params[:player_throw][1] })
+  rescue
+    redirect "/games?tie=true"
+  end
 
-  player_one_throw = Token.find_by(id: params[:player_throw][0])
-  player_two_throw = Token.find_by(id: params[:player_throw][1])
-
-  new_game = Game.new(winner: player_one,
-                      loser: player_two, 
-                      winning_token: player_one_throw,
-                      losing_token:  player_two_throw)
+  new_game = Game.new(winner: game_outcome.winner[:player],
+                      loser:  game_outcome.loser[:player], 
+                      winning_token: game_outcome.winner[:token],
+                      losing_token:  game_outcome.loser[:token])
 
   if new_game.save
     redirect "/games/#{new_game.id}"
@@ -30,5 +32,8 @@ post '/games' do
 end
 
 get '/games/:id' do 
+  current_game = Game.find_by(id: params[:id])
+
+  erb :results, locals: {game: current_game}
 
 end

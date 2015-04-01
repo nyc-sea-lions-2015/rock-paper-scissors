@@ -1,0 +1,59 @@
+<div class='row body'>
+  <div class='small-12 columns'>
+    AND THE WINNER IS
+  </div>
+</div>
+<div class='row body'>
+  <div class='small-12 columns'>
+    <div>
+      <%= game.winner.username.upcase %>
+    </div>
+    <div>
+      <img class='throw' src='<%= game.winning_token.url %>' />
+    </div>
+  </div>
+</div>
+<div class='row body'>
+  <div class='small-6 columns'>
+    <div>
+      <%= game.winner.username.capitalize %>'s Lifetime Stats
+    </div>
+  </div>
+  <div class='small-6 columns'>
+    <div>
+      <%= game.loser.username.capitalize %>'s Lifetime Stats
+    </div>
+  </div>
+</div>
+<div class='row body'>
+  <div class='small-6 columns'>
+    <table class='stats'>
+      <tr>
+        <th>Wins</th>
+        <th>losses</th>
+      </tr>
+      <tr>
+        <td><%= game.winner.wins.length %></td>
+        <td><%= game.winner.losses.length %></td>
+      </tr>
+    </table>
+  </div>
+  <div class='small-6 columns'>
+    <table class='stats'>
+      <tr>
+        <th>Wins</th>
+        <th>losses</th>
+      </tr>
+      <tr>
+        <td><%= game.loser.wins.length %></td>
+        <td><%= game.loser.losses.length %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class='row body'>
+  <div class='small-12 columns'>
+    <a href='/games' class='btn'>Play Again?</a>
+  </div>
+</div>
+
