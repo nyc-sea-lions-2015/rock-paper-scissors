@@ -1,1 +1,18 @@
-<h1> Hello World </h1>
+<div class="row header" >
+  <div class="small-12 columns">
+    Rock... Paper... Scissors...
+  </div>
+</div>
+<div class="row body">
+  <% @tokens.each do |token| %>
+    <div class="small-4 columns">
+      <img class='throw' src='<%=token.url%>' alt='<%=token.name%>' />
+    </div>
+  <%end%>
+<div class='row body'>
+  <div class="small-12 columns">
+    <a class='btn' href='/games'>Start Battle</a>
+  </div>
+</div>
+
+  

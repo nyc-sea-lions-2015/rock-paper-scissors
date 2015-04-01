@@ -1,0 +1,35 @@
+h4{
+  font-family: 'Pacifico', cursive !important;
+}
+
+.content{
+  margin: 0 auto;
+  width: 70%;
+}
+
+.header{
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 2em;
+  border-bottom: 2px solid black;
+}
+
+.body{
+  padding: 10px;
+  text-align: center;
+}
+
+img.throw{
+  height: 100px;
+}
+
+.btn{
+  text-decoration: none;
+  color: #000;
+  background: transparent;
+  border: none;
+}
+
+.btn:hover {
+  color:#87CCCC;
+}
