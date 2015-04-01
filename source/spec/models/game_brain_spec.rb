@@ -8,7 +8,7 @@ describe "Game Brain" do
   
   let!(:rock) {    Token.create(name: 'rock', url: '/') }
   let!(:paper) {    Token.create(name: 'paper', url: '/') }
-  let!(:scissor) {    Token.create(name: 'scissors', url: '/') }
+  let!(:scissor) {    Token.create(name: 'scissor', url: '/') }
 
   let!(:params) { {player_one_id: player_1.id,
                   player_two_id: player_2.id,
